@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Knowledge Hub</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body and background styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, black, gold);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styling */
+        header {
+            background-color: black;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            z-index: 1000;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        /* Home button styling */
+        .home-btn {
+            background-color: transparent;
+            color: white;
+            font-size: 20px;
+            padding: 10px 20px;
+            border: 2px solid gold;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-btn:hover {
+            background-color: gold;
+            color: black;
+        }
+
+        /* Main content area styling */
+        main {
+            padding: 100px 20px 20px; /* Prevent content from overlapping the header */
+            text-align: center;
+        }
+
+        h1 {
+            color: gold;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: gold;
+        }
+
+        .content-section {
+            margin-bottom: 50px;
+        }
+
+        /* Card-like section for terms, tools, and examples */
+        .content-card {
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: scale(1.05);
+        }
+
+        pre {
+            background-color: #333;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            color: #f8f8f2;
+            word-wrap: break-word;
+            white-space: pre-wrap;
+        }
+
+        /* Terms and Tools sections */
+        .term-list, .tool-list {
+            text-align: left;
+            padding-left: 40px;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            header {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .home-btn {
+                font-size: 16px;
+            }
+
+            .content-card {
+                padding: 15px;
+            }
+
+            .content-section {
+                margin-bottom: 30px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header with Home button -->
+    <header>
+        <a href="index.html" class="home-btn">Home</a>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <h1>Cybersecurity Knowledge Hub</h1>
+
+        <!-- Cybersecurity Terms Section -->
+        <div class="content-section">
+            <h2>Cybersecurity Terms</h2>
+            <div class="content-card">
+                <h3>Malware</h3>
+                <p>Malware refers to any malicious software designed to harm, exploit, or otherwise compromise a computer system.</p>
+            </div>
+            <div class="content-card">
+                <h3>Phishing</h3>
+                <p>Phishing is a type of social engineering attack where attackers deceive individuals into revealing confidential information, often through fraudulent emails or websites.</p>
+            </div>
+            <div class="content-card">
+                <h3>Encryption</h3>
+                <p>Encryption is the process of converting data into a code to prevent unauthorized access, ensuring that only authorized parties can decrypt and read it.</p>
+            </div>
+        </div>
+
+        <!-- Cybersecurity Tools Section -->
+        <div class="content-section">
+            <h2>Cybersecurity Tools</h2>
+            <div class="content-card">
+                <h3>Nmap</h3>
+                <p>Nmap (Network Mapper) is an open-source tool used for network discovery and security auditing. It helps administrators discover devices on a network, identify services, and detect vulnerabilities.</p>
+            </div>
+            <div class="content-card">
+                <h3>Wireshark</h3>
+                <p>Wireshark is a network protocol analyzer that captures and inspects data traveling through a network. It's commonly used for troubleshooting network issues and security analysis.</p>
+            </div>
+            <div class="content-card">
+                <h3>Metasploit</h3>
+                <p>Metasploit is a penetration testing tool that allows security researchers to find and exploit vulnerabilities in networks and systems.</p>
+            </div>
+        </div>
+
+        <!-- Example Code Section -->
+        <div class="content-section">
+            <h2>Example Code</h2>
+            <div class="content-card">
+                <h3>Python - Simple Encryption (Caesar Cipher)</h3>
+                <pre><code>
+def caesar_cipher(text, shift):
+    result = ""
+    for char in text:
+        if char.isalpha():
+            shift_amount = 65 if char.isupper() else 97
+            result += chr((ord(char) + shift - shift_amount) % 26 + shift_amount)
+        else:
+            result += char
+    return result
+
+print(caesar_cipher("Hello World!", 3))  # Outputs: "Khoor Zruog!"
+                </code></pre>
+            </div>
+            <div class="content-card">
+                <h3>PHP - Simple Login Script</h3>
+                <pre><code>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    
+    if ($username == "admin" && $password == "password") {
+        echo "Login successful!";
+    } else {
+        echo "Invalid credentials.";
+    }
+}
+?>
+<form method="post">
+    Username: <input type="text" name="username"><br>
+    Password: <input type="password" name="password"><br>
+    <input type="submit" value="Login">
+</form>
+                </code></pre>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

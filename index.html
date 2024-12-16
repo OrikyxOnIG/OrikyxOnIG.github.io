@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Orikyx's Programming Community</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #f4f4f4;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-buttons a {
+            text-decoration: none;
+            color: #f4f4f4;
+            background-color: gold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .header-buttons a:hover {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Sidebar styles */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 999;
+            overflow: hidden;
+            transition: width 0.3s ease;
+        }
+
+        .sidebar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 250px;
+            max-width: 80%;
+            height: 100%;
+            background-color: #222;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar .close-btn {
+            font-size: 1.5rem;
+            color: gold;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 15px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #f4f4f4;
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            padding: 10px;
+            background-color: #444;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: gold;
+            color: #333;
+        }
+
+        /* Sidebar toggle button */
+        #menu-btn {
+            font-size: 1.5rem;
+            color: gold;
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-right: auto;
+        }
+
+        /* Main content styles */
+        .main-content {
+            flex: 1;
+            margin-top: 60px; /* Adjusted for fixed header */
+            padding: 20px;
+        }
+
+        .main-content h2 {
+            color: gold;
+            margin-bottom: 20px;
+        }
+
+        .main-content p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #1a1a1a;
+            color: gold;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: gold;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 5px;
+        }
+
+        footer a:hover {
+            color: #f4f4f4;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px;
+            }
+
+            .header-buttons a {
+                font-size: 12px;
+                padding: 6px 10px;
+            }
+
+            .sidebar ul li a {
+                font-size: 14px;
+            }
+
+            footer {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <button id="menu-btn">&#9776;</button>
+        <div class="header-buttons">
+            <a href="log-in.html">Login</a>
+            <a href="signup.html">Sign Up</a>
+        </div>
+    </header>
+
+    <!-- Sidebar overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay">
+        <div class="sidebar">
+            <button class="close-btn" id="close-btn">&times;</button>
+            <ul>
+                <li><a href="learningcode.html">Learning Code</a></li>
+                <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                <li><a href="ps3programming.html">PS3 Programming</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <h2>Welcome to Orikyx's Programming Community</h2>
+        <p>
+            Dive into the exciting world of programming! Whether you’re a beginner or an expert, 
+            explore topics such as learning to code, mastering cybersecurity, and delving into PS3 programming. 
+            Use the sidebar for quick navigation.
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Created by Bryson Harvey</p>
+        <p>
+            <a href="https://facebook.com/BrysonHarvey" target="_blank">Facebook</a> |
+            <a href="https://instagram.com/freeorikyx" target="_blank">Instagram</a> |
+            <a href="mailto:b21227127@gmail.com">Email</a>
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        const closeBtn = document.getElementById('close-btn');
+
+        // Open sidebar
+        menuBtn.addEventListener('click', () => {
+            sidebarOverlay.style.width = '100%';
+        });
+
+        // Close sidebar
+        closeBtn.addEventListener('click', () => {
+            sidebarOverlay.style.width = '0';
+        });
+
+        // Close sidebar by clicking outside of it
+        sidebarOverlay.addEventListener('click', (e) => {
+            if (e.target === sidebarOverlay) {
+                sidebarOverlay.style.width = '0';
+            }
+        });
+    </script>
+</body>
+</html>
