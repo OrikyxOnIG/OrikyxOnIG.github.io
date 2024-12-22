@@ -3,516 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprehensive Coding Cheatsheets</title>
+    <title>Learning Code</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
             margin: 0;
-            padding: 0;
-            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, black, gold);
+            color: white;
         }
-
         header {
-            background-color: #222;
-            color: #fff;
-            padding: 20px;
             text-align: center;
-        }
-
-/* Home Button Styling */
-.home-button {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #333; /* Dark background for contrast */
-    color: #fff; /* White text */
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s;
-}
-
-.home-button:hover {
-    background-color: #f1c40f; /* Gold color on hover */
-}
-
-        main {
-            max-width: 1200px;
-            margin: 20px auto;
             padding: 20px;
-            background-color: #fff;
+            background-color: black;
+            color: gold;
+        }
+        nav {
+            text-align: center;
+            margin: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            padding: 10px 20px;
+            color: gold;
+            border: 2px solid gold;
             border-radius: 5px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            overflow-x: auto;
-            padding-bottom: 50px;
+            transition: background-color 0.3s, color 0.3s;
         }
-
-        section {
-            margin-bottom: 30px;
+        nav a:hover {
+            background-color: gold;
+            color: black;
         }
-
-        h1, h2 {
-            margin-bottom: 10px;
-        }
-
-        h1 {
-            color: #222;
-        }
-
-        h2 {
-            color: #444;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 5px;
-            margin-bottom: 15px;
-        }
-
-        code, pre {
-            background-color: #f7f7f7;
-            display: block;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
-
-        ul, ol {
-            margin-bottom: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background-color: #222;
-            color: #fff;
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            max-width: 800px;
+            margin: 20px auto;
             text-align: center;
-            padding: 10px;
-            margin-top: 30px;
         }
-
+        .button-grid a {
+            display: block;
+            padding: 15px;
+            font-size: 16px;
+            color: black;
+            background-color: gold;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .button-grid a:hover {
+            background-color: white;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: black;
+            color: gold;
+        }
         footer a {
-            color: #ffcc00;
+            color: gold;
             text-decoration: none;
         }
-
-        /* Scrollable content */
-        .scrollable {
-            max-height: 600px;
-            overflow-y: auto;
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <header>
-        <!-- Home Button -->
-<a href="index.html" class="home-button">Home</a>
-        <h1>Orikyx's Programming Community Learning Code Page</h1>
-        <p>Learn everything from basic syntax to advanced topics in each language</p>
+        <h1>Learning Code</h1>
     </header>
-    <main>
-        <!-- HTML Cheatsheet -->
-        <section id="html">
-            <h2>HTML Cheatsheet</h2>
-            <p>HTML (HyperText Markup Language) forms the structure of a webpage.</p>
-            <div class="scrollable">
-                <ul>
-                    <li><strong>Basic Structure:</strong></li>
-                    <pre>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Webpage Title&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;h1&gt;Heading&lt;/h1&gt;
-    &lt;p&gt;This is a paragraph&lt;/p&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-                    </pre>
-                    <li><strong>Common Elements:</strong></li>
-                    <ul>
-                        <li><strong>Headings:</strong> <code>&lt;h1&gt; to &lt;h6&gt;</code></li>
-                        <li><strong>Paragraphs:</strong> <code>&lt;p&gt;</code></li>
-                        <li><strong>Lists:</strong> Unordered (<code>&lt;ul&gt;</code>) and Ordered (<code>&lt;ol&gt;</code>) Lists</li>
-                        <li><strong>Links:</strong> <code>&lt;a href="url"&gt;Link&lt;/a&gt;</code></li>
-                        <li><strong>Images:</strong> <code>&lt;img src="image.jpg" alt="Description"&gt;</code></li>
-                        <li><strong>Forms:</strong> <code>&lt;form&gt;</code> to collect user input (e.g., text, buttons, etc.).</li>
-                    </ul>
-                    <li><strong>HTML5 Features:</strong> <code>&lt;video&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;canvas&gt;</code></li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- XML Cheatsheet -->
-        <section id="xml">
-            <h2>XML Cheatsheet</h2>
-            <p>XML is used to store and transport data in a structured format.</p>
-            <div class="scrollable">
-                <ul>
-                    <li><strong>Basic Syntax:</strong> Every element must have a start tag and an end tag.</li>
-                    <pre>
-&lt;note&gt;
-    &lt;to&gt;John&lt;/to&gt;
-    &lt;from&gt;Jane&lt;/from&gt;
-    &lt;heading&gt;Reminder&lt;/heading&gt;
-    &lt;body&gt;Don't forget the meeting tomorrow!&lt;/body&gt;
-&lt;/note&gt;
-                    </pre>
-                    <li><strong>Attributes:</strong> Elements can contain attributes like <code>id</code> or <code>class</code>.</li>
-                    <li><strong>Namespaces:</strong> Define custom elements using namespaces (e.g., <code>xmlns</code>).</li>
-                    <li><strong>Uses:</strong> XML is used for data storage (e.g., RSS feeds, configuration files).</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Python Cheatsheet -->
-        <section id="python">
-            <h2>Python Cheatsheet</h2>
-            <p>Python is a high-level, interpreted programming language known for its readability.</p>
-            <div class="scrollable">
-                <ul>
-                    <li><strong>Syntax:</strong> Variables don’t need explicit type declaration.</li>
-                    <pre>
-x = 10
-y = "Hello"
-print(x, y)
-                    </pre>
-                    <li><strong>Data Types:</strong> Integers, Strings, Lists, Tuples, Dictionaries</li>
-                    <li><strong>Control Structures:</strong> <code>if</code>, <code>for</code>, <code>while</code> loops.</li>
-                    <li><strong>Functions:</strong> Defined with <code>def</code> keyword.</li>
-                    <pre>
-def greet(name):
-    return f"Hello, {name}"
-                    </pre>
-                    <li><strong>Advanced Concepts:</strong> Object-Oriented Programming (Classes, Inheritance, etc.), Decorators, Lambdas</li>
-                    <li><strong>Popular Libraries:</strong> NumPy, Pandas, Matplotlib, Django, Flask</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- C++ Cheatsheet -->
-        <section id="cpp">
-            <h2>C++ Cheatsheet</h2>
-            <p>C++ is a powerful, compiled language for system and application software.</p>
-            <div class="scrollable">
-                <ul>
-                    <li><strong>Basic Structure:</strong> <code>#include</code> and <code>main()</code> function.</li>
-                    <pre>
-#include &lt;iostream&gt;
-using namespace std;
-int main() {
-    cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
-    return 0;
-}
-                    </pre>
-                    <li><strong>Variables and Types:</strong> int, char, float, double, string</li>
-                    <li><strong>Control Flow:</strong> <code>if</code>, <code>for</code>, <code>while</code>, <code>switch</code>.</li>
-                    <li><strong>Functions:</strong> Defined using <code>return_type function_name(params)</code></li>
-                    <pre>
-int add(int a, int b) {
-    return a + b;
-}
-                    </pre>
-                    <li><strong>Object-Oriented Programming:</strong> Classes, Inheritance, Polymorphism</li>
-                    <li><strong>STL (Standard Template Library):</strong> Vectors, Maps, Sets</li>
-                </ul>
-            </div>
-        </section>
-
-<!-- Java Cheatsheet -->
-        <section id="java">
-            <h2>Java Cheatsheet</h2>
-            <p>Java is a class-based, object-oriented programming language used for building cross-platform applications.</p>
-            <div class="scrollable">
-                <ul>
-                    <li><strong>Basic Structure:</strong></li>
-                    <pre>
-public class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, World!");
-    }
-}
-                    </pre>
-                    <li><strong>Variables and Types:</strong> int, double, char, String, boolean</li>
-                    <li><strong>Control Structures:</strong> if, else, switch, for, while</li>
-                    <li><strong>Functions:</strong> Defined inside classes. No need for <code>return_type function_name(params)</code> in main method.</li>
-                    <pre>
-public int add(int a, int b) {
-    return a + b;
-}
-                    </pre>
-                    <li><strong>OOP Features:</strong> Classes, Objects, Inheritance, Polymorphism, Abstraction</li>
-                    <li><strong>Advanced Features:</strong> Exception Handling (try-catch), Threads, Generics, Lambda Expressions</li>
-                    <li><strong>Popular Libraries:</strong> JavaFX, Spring Framework, Apache Commons</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- JavaScript Cheatsheet -->
-        <section id="javascript">
-            <h2>JavaScript Cheatsheet</h2>
-            <p>JavaScript is a versatile, interpreted language primarily used for creating interactive web pages.</p>
-            <div class="scrollable">
-                <ul>
-                    <li><strong>Basic Structure:</strong></li>
-                    <pre>
-&lt;script&gt;
-    console.log("Hello, World!");
-&lt;/script&gt;
-                    </pre>
-                    <li><strong>Variables:</strong> <code>var</code>, <code>let</code>, <code>const</code></li>
-                    <li><strong>Functions:</strong> Defined using <code>function</code> keyword, or <code>arrow functions</code>.</li>
-                    <pre>
-function greet(name) {
-    return "Hello, " + name;
-}
-                    </pre>
-                    <pre>
-const add = (a, b) => a + b;
-                    </pre>
-                    <li><strong>DOM Manipulation:</strong> Select and manipulate elements using <code>document.getElementById()</code>, <code>document.querySelector()</code></li>
-                    <li><strong>Events:</strong> Attach event listeners to HTML elements.</li>
-                    <pre>
-document.getElementById("myButton").addEventListener("click", function() {
-    alert("Button clicked!");
-});
-                    </pre>
-                    <li><strong>Async Programming:</strong> <code>setTimeout()</code>, <code>setInterval()</code>, Promises, async/await</li>
-                    <li><strong>Popular Libraries:</strong> React.js, Vue.js, Node.js</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Ruby Cheatsheet -->
-        <section id="ruby">
-            <h2>Ruby Cheatsheet</h2>
-            <p>Ruby is an interpreted, high-level programming language known for its simplicity and productivity.</p>
-            <div class="scrollable">
-                <ul>
-                    <li><strong>Basic Syntax:</strong></li>
-                    <pre>
-puts "Hello, World!"
-                    </pre>
-                    <li><strong>Variables and Data Types:</strong> Integers, Strings, Arrays, Hashes</li>
-                    <pre>
-x = 10
-name = "John"
-array = [1, 2, 3]
-hash = { key: "value" }
-                    </pre>
-                    <li><strong>Control Flow:</strong> if, else, elsif, unless, case</li>
-                    <li><strong>Loops:</strong> <code>while</code>, <code>until</code>, <code>for</code>, <code>each</code></li>
-                    <pre>
-array.each do |element|
-  puts element
-end
-                    </pre>
-                    <li><strong>Functions:</strong> Defined with the <code>def</code> keyword</li>
-                    <pre>
-def greet(name)
-    puts "Hello, #{name}!"
-end
-                    </pre>
-                    <li><strong>OOP in Ruby:</strong> Classes, Modules, Inheritance, Polymorphism</li>
-                    <li><strong>Popular Libraries:</strong> Rails, Sinatra</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- React.js Cheatsheet -->
-        <section id="react">
-            <h2>React.js Cheatsheet</h2>
-            <p>React is a JavaScript library for building user interfaces, particularly single-page applications.</p>
-            <div class="scrollable">
-                <ul>
-                    <li><strong>Basic Setup:</strong> React components are functions or classes.</li>
-                    <pre>
-import React from "react";
-
-function App() {
-    return &lt;div&gt;Hello, React!&lt;/div&gt;
-}
-export default App;
-                    </pre>
-                    <li><strong>JSX Syntax:</strong> JSX allows HTML-like syntax inside JavaScript.</li>
-                    <pre>
-const element = &lt;h1&gt;Hello, world!&lt;/h1&gt;
-                    </pre>
-                    <li><strong>State and Props:</strong> State is local data, Props are data passed to components.</li>
-                    <pre>
-const [count, setCount] = useState(0);
-<button onClick={() => setCount(count + 1)}&gt;Increment&lt;/button&gt;
-                    </pre>
-                    <li><strong>Effect Hook:</strong> <code>useEffect</code> for side effects like API calls.</li>
-                    <pre>
-useEffect(() => {
-    document.title = `You clicked ${count} times`;
-}, [count]);
-                    </pre>
-                    <li><strong>Popular Tools:</strong> React Router, Redux</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Angular Cheatsheet -->
-        <section id="angular">
-            <h2>Angular Cheatsheet</h2>
-            <p>Angular is a platform and framework for building single-page client applications using HTML and TypeScript.</p>
-            <div class="scrollable">
-                <ul>
-                    <li><strong>Basic Structure:</strong> Angular applications are composed of components and modules.</li>
-                    <pre>
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-root',
-  template: '&lt;h1&gt;Hello, Angular!&lt;/h1&gt;',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent {}
-                    </pre>
-                    <li><strong>Directives:</strong> Structural directives like <code>*ngIf</code> and <code>*ngFor</code></li>
-                    <pre>
-&lt;div *ngIf="isVisible"&gt;This is visible!&lt;/div&gt;
-&lt;div *ngFor="let item of items"&gt;{{ item }}&lt;/div&gt;
-                    </pre>
-                    <li><strong>Forms:</strong> Template-driven and reactive forms for handling user input.</li>
-                    <li><strong>Services and Dependency Injection:</strong> Use services to share data and logic across components.</li>
-                    <pre>
-@Injectable()
-export class DataService {
-  getData() {
-    return ['Angular', 'React', 'Vue'];
-  }
-}
-                    </pre>
-                    <li><strong>Routing:</strong> Use Angular Router for navigation between components.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- PHP Cheatsheet -->
-        <section id="php">
-            <h2>PHP Cheatsheet</h2>
-            <p>PHP is a server-side scripting language designed for web development but also used as a general-purpose language.</p>
-            <div class="scrollable">
-                <ul>
-                    <li><strong>Basic Syntax:</strong></li>
-                    <pre>
-&lt;?php
-    echo "Hello, World!";
-?&gt;
-                    </pre>
-                    <li><strong>Variables and Data Types:</strong> String, Integer, Float, Boolean, Array, Object</li>
-                    <pre>
-$name = "John";
-$age = 30;
-$items = array("apple", "banana");
-                    </pre>
-                    <li><strong>Control Flow:</strong> if, else, elseif, switch</li>
-                    <li><strong>Loops:</strong> while, for, foreach</li>
-                    <li><strong>Functions:</strong> Defined using <code>function</code> keyword</li>
-                    <pre>
-function greet($name) {
-    return "Hello, $name!";
-}
-                    </pre>
-                    <li><strong>Common Functions:</strong> <code>strlen()</code>, <code>array()</code>, <code>$_GET</code>, <code>$_POST</code></li>
-                    <li><strong>OOP:</strong> Classes, Objects, Inheritance, Interfaces, Traits</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Golang Cheatsheet -->
-        <section id="golang">
-            <h2>Golang Cheatsheet</h2>
-            <p>Go (or Golang) is a statically typed, compiled language designed for simplicity and efficiency, especially in cloud and server-side applications.</p>
-            <div class="scrollable">
-                <ul>
-                    <li><strong>Basic Syntax:</strong></li>
-                    <pre>
-package main
-import "fmt"
-
-func main() {
-    fmt.Println("Hello, Go!")
-}
-                    </pre>
-                    <li><strong>Variables:</strong> var, const</li>
-                    <pre>
-var x int = 10
-const y = 5
-                    </pre>
-                   <li><strong>Functions:</strong> Function declaration using <code>func</code></li>
-                    <pre>
-func add(a int, b int) int {
-    return a + b
-}
-                    </pre>
-                    <li><strong>Control Structures:</strong> if, for, switch, select</li>
-                    <pre>
-if x > y {
-    fmt.Println("x is greater than y")
-} else {
-    fmt.Println("y is greater than x")
-}
-                    </pre>
-                    <pre>
-for i := 0; i < 5; i++ {
-    fmt.Println(i)
-}
-                    </pre>
-                    <li><strong>Goroutines and Channels:</strong> Used for concurrency. Goroutines are lightweight threads, and channels are used to communicate between them.</li>
-                    <pre>
-go func() {
-    fmt.Println("Hello from a goroutine")
-}()
-
-ch := make(chan string)
-go func() {
-    ch <- "Hello from channel"
-}()
-fmt.Println(<-ch)
-                    </pre>
-                    <li><strong>Structs:</strong> Define custom data types.</li>
-                    <pre>
-type Person struct {
-    Name string
-    Age  int
-}
-                    </pre>
-                    <li><strong>Popular Libraries:</strong> Gin, Gorm, Go kit</li>
-                </ul>
-            </div>
-        </section>
-    </main>
-    
-    <!-- Footer -->
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+    <div class="button-grid">
+        <a href="learninghtml.html">HTML</a>
+        <a href="learningcss.html">CSS</a>
+        <a href="learningcpp.html">C++</a>
+        <a href="learningcsharp.html">C#</a>
+        <a href="learningjs.html">JavaScript</a>
+        <a href="learningxml.html">XML</a>
+        <a href="learningphp.html">PHP</a>
+        <a href="learningruby.html">Ruby</a>
+        <a href="learningpython.html">Python</a>
+        <a href="learninggolang.html">Golang</a>
+        <a href="learningkotlin.html">Kotlin</a>
+        <a href="learningassembly.html">Assembly</a>
+        <a href="learningsql.html">SQL</a>
+        <a href="learningbash.html">BASH</a>
+    </div>
     <footer>
-        <p>&copy; 2024 Bryson Harvey</p>
-        <p>Follow me on Social Media:</p>
-        <ul>
-            <li><a href="https://www.facebook.com/BrysonHarvey">Facebook: Bryson Harvey</a></li>
-            <li><a href="https://www.instagram.com/freeorikyx">Instagram: @freeorikyx</a></li>
-            <li><a href="https://discord.com/users/bryson.orikyx">Discord: bryson.orikyx</a></li>
-        </ul>
-        <p>Email: <a href="mailto:b21227127@gmail.com">b21227127@gmail.com</a></p>
+        <p>© Bryson Harvey</p>
+        <p>
+            Instagram: <a href="https://www.instagram.com/freeorikyx" target="_blank">@freeorikyx</a><br>
+            Facebook: <a href="https://www.facebook.com/bryson.harvey" target="_blank">Bryson Harvey</a><br>
+            Email: <a href="mailto:b21227127@gmail.com">b21227127@gmail.com</a><br>
+            Discord Server: <a href="https://discord.gg/ZPXh9xUW8A" target="_blank">Join Here</a>
+        </p>
     </footer>
 </body>
 </html>
