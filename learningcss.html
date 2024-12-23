@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Cheatsheet</title>
+    <style>
+        /* General Styling */
+        body {
+            background-color: #000;
+            color: #ffd700;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #111;
+            color: #ffd700;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a.home-btn {
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        main {
+            padding: 1rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cheatsheet-item {
+            margin-bottom: 1rem;
+        }
+
+        .cheatsheet-item h3 {
+            font-size: 1.2rem;
+        }
+
+        pre {
+            background-color: #222;
+            color: #ffd700;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        footer {
+            background-color: #111;
+            color: #ffd700;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        footer ul li a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learning CSS</h1>
+        <nav>
+            <a href="index.html" class="home-btn">Home</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Selectors</h2>
+            <div class="cheatsheet-item">
+                <h3>Element Selector</h3>
+                <pre><code>element { /* styles */ }</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Class Selector</h3>
+                <pre><code>.classname { /* styles */ }</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>ID Selector</h3>
+                <pre><code>#idname { /* styles */ }</code></pre>
+            </div>
+            <!-- Add other selectors here -->
+        </section>
+
+        <section>
+            <h2>Box Model</h2>
+            <div class="cheatsheet-item">
+                <h3>Width & Height</h3>
+                <pre><code>element { width: 100px; height: 50px; }</code></pre>
+            </div>
+            <!-- Add other Box Model items here -->
+        </section>
+
+        <!-- Add other sections like Layout, Typography, etc. -->
+
+        <section>
+            <h2>Advanced Learners</h2>
+            <div class="cheatsheet-item">
+                <h3>CSS Grid Layout</h3>
+                <pre><code>grid-container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
+}</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Flexbox (Advanced)</h3>
+                <pre><code>flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+flex-item {
+    order: 2;
+}</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Advanced Animations</h3>
+                <pre><code>element {
+    animation: fade-in 2s ease-in-out, slide-in 1s ease-in;
+}</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Clip Path and Masking</h3>
+                <pre><code>element {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}</code></pre>
+            
+        <section>
+            <h2>Typography</h2>
+            <div class="cheatsheet-item">
+                <h3>Font</h3>
+                <pre><code>element { font-family: Arial, sans-serif; }</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Text Alignment</h3>
+                <pre><code>element { text-align: center; }</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Text Decoration</h3>
+                <pre><code>element { text-decoration: underline; }</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Text Transformation</h3>
+                <pre><code>element { text-transform: uppercase; }</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Colors</h2>
+            <div class="cheatsheet-item">
+                <h3>Color</h3>
+                <pre><code>element { color: #ffd700; }</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Background</h3>
+                <pre><code>element { background-color: #000; }</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Transitions & Animations</h2>
+            <div class="cheatsheet-item">
+                <h3>Transitions</h3>
+                <pre><code>element {
+    transition: all 0.3s ease-in-out;
+}</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Keyframe Animations</h3>
+                <pre><code>@keyframes example {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100px); }
+}
+element {
+    animation: example 2s infinite;
+}</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Shadows</h2>
+            <div class="cheatsheet-item">
+                <h3>Box Shadow</h3>
+                <pre><code>element { box-shadow: 4px 4px 8px #444; }</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Text Shadow</h3>
+                <pre><code>element { text-shadow: 2px 2px 4px #000; }</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Responsive Design</h2>
+            <div class="cheatsheet-item">
+                <h3>Media Queries</h3>
+                <pre><code>@media (max-width: 768px) {
+    element {
+        display: none;
+    }
+}</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>CSS Variables</h2>
+            <div class="cheatsheet-item">
+                <h3>Declaring and Using Variables</h3>
+                <pre><code>:root {
+    --primary-color: #ffd700;
+}
+element {
+    color: var(--primary-color);
+}</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>Miscellaneous</h2>
+            <div class="cheatsheet-item">
+                <h3>Opacity</h3>
+                <pre><code>element { opacity: 0.5; }</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Visibility</h3>
+                <pre><code>element { visibility: hidden; }</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Z-Index</h3>
+                <pre><code>element { z-index: 10; }</code></pre>
+            </div>
+        </section>
+        <section>
+            <h2>CSS Filters</h2>
+            <div class="cheatsheet-item">
+                <h3>Blur</h3>
+                <pre><code>element { filter: blur(5px); }</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Grayscale</h3>
+                <pre><code>element { filter: grayscale(100%); }</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Brightness and Contrast</h3>
+                <pre><code>element {
+    filter: brightness(150%) contrast(120%);
+}</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>CSS Transitions (Advanced)</h2>
+            <div class="cheatsheet-item">
+                <h3>Transition on Hover</h3>
+                <pre><code>element {
+    transition: background-color 0.5s ease;
+}
+element:hover {
+    background-color: #444;
+}</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Transition Grouping</h3>
+                <pre><code>element {
+    transition: color 0.5s, transform 0.3s ease-in-out;
+}</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Delaying Transitions</h3>
+                <pre><code>element {
+    transition: opacity 0.5s ease 1s; /* 1s delay */
+}</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>CSS Variables for Theme Switching</h2>
+            <div class="cheatsheet-item">
+                <h3>Defining Themes</h3>
+                <pre><code>:root {
+    --bg-color-light: #fff;
+    --text-color-light: #000;
+    --bg-color-dark: #000;
+    --text-color-dark: #fff;
+}
+body.light {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+}
+body.dark {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Applying Theme Variables</h3>
+                <pre><code>body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}</code></pre>
+            </div>
+        </section>
+
+        <section>
+            <h2>CSS Logical Properties</h2>
+            <div class="cheatsheet-item">
+                <h3>Margin and Padding (Logical Properties)</h3>
+                <pre><code>element {
+    margin-inline: 20px;
+    padding-block: 15px;
+}</code></pre>
+            </div>
+            <div class="cheatsheet-item">
+                <h3>Direction-Independent Text Alignment</h3>
+                <pre><code>element {
+    text-align: start; /* Works for both LTR and RTL languages */
+}</code></pre>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Bryson Harvey | Email: <a href="mailto:b21227127@gmail.com">b21227127@gmail.com</a></p>
+        <ul>
+            <li><a href="https://www.facebook.com/bryson.Harvey">Facebook</a></li>
+            <li><a href="https://www.instagram.com/freeorikyx">Instagram</a></li>
+            <li><a href="https://discord.gg/ZPXh9xUW8A">Discord Server</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
