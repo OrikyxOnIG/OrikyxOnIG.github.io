@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Cheatsheet</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, black, gold);
+            color: white;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: black;
+            color: gold;
+        }
+        nav {
+            text-align: center;
+            margin: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            padding: 10px 20px;
+            color: gold;
+            border: 2px solid gold;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: gold;
+            color: black;
+        }
+        section {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        section h2 {
+            color: gold;
+            text-align: center;
+        }
+        .code-box {
+            background-color: black;
+            color: gold;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid gold;
+            border-radius: 5px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            font-family: Consolas, monospace;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: black;
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learning HTML</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+    <section>
+        <h2>HTML Elements</h2>
+        
+        <h3>Div Section</h3>
+        <div class="code-box">
+&lt;div&gt;<br>
+&nbsp;&nbsp;&lt;p&gt;This is inside a div.&lt;/p&gt;<br>
+&lt;/div&gt;
+        </div>
+
+        <h3>Headings</h3>
+        <div class="code-box">
+&lt;h1&gt;Heading 1&lt;/h1&gt;<br>
+&lt;h2&gt;Heading 2&lt;/h2&gt;<br>
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+        </div>
+
+        <h3>Styled Paragraph</h3>
+        <div class="code-box">
+&lt;p style="color: gold; font-size: 18px;"&gt;This is a styled paragraph.&lt;/p&gt;
+        </div>
+
+        <h3>Images</h3>
+        <div class="code-box">
+&lt;img src="image.jpg" alt="Sample Image" width="300"&gt;
+        </div>
+
+        <h3>Text Links</h3>
+        <div class="code-box">
+&lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;
+        </div>
+
+        <h3>Image Links</h3>
+        <div class="code-box">
+&lt;a href="https://www.example.com"&gt;&lt;img src="image.jpg" alt="Link Image" width="300"&gt;&lt;/a&gt;
+        </div>
+
+        <h3>Mailto Links</h3>
+        <div class="code-box">
+&lt;a href="mailto:example@example.com"&gt;Send Email&lt;/a&gt;
+        </div>
+
+        <h3>Inner Anchors</h3>
+        <div class="code-box">
+&lt;a href="#section1"&gt;Go to Section 1&lt;/a&gt;<br><br>
+&lt;h2 id="section1"&gt;Section 1&lt;/h2&gt;
+        </div>
+
+        <h3>Text Formatting</h3>
+        <div class="code-box">
+&lt;strong&gt;Bold Text&lt;/strong&gt;<br>
+&lt;em&gt;Italic Text&lt;/em&gt;<br>
+&lt;u&gt;Underlined Text&lt;/u&gt;
+        </div>
+
+        <h3>Iframe</h3>
+        <div class="code-box">
+&lt;iframe src="https://www.example.com" width="600" height="400"&gt;&lt;/iframe&gt;
+        </div>
+
+        <h3>Abbreviation</h3>
+        <div class="code-box">
+&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;
+        </div>
+
+        <h3>Comments</h3>
+        <div class="code-box">
+&lt;!-- This is a comment --&gt;
+        </div>
+
+        <h3>Horizontal Line</h3>
+        <div class="code-box">
+&lt;hr&gt;
+        </div>
+
+        <h3>Line Break</h3>
+        <div class="code-box">
+&lt;br&gt;
+        </div>
+
+        <h3>Quotation</h3>
+        <div class="code-box">
+&lt;blockquote&gt;This is a blockquote.&lt;/blockquote&gt;
+        </div>
+
+        <h3>Video</h3>
+        <div class="code-box">
+&lt;video controls&gt;<br>
+&nbsp;&nbsp;&lt;source src="video.mp4" type="video/mp4"&gt;<br>
+&lt;/video&gt;
+        </div>
+
+        <h3>Audio</h3>
+        <div class="code-box">
+&lt;audio controls&gt;<br>
+&nbsp;&nbsp;&lt;source src="audio.mp3" type="audio/mpeg"&gt;<br>
+&lt;/audio&gt;
+        </div>
+
+        <h2>HTML Structures</h2>
+
+        <h3>Tables</h3>
+        <div class="code-box">
+&lt;table&gt;<br>
+&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Name&lt;/th&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Age&lt;/th&gt;<br>
+&nbsp;&nbsp;&lt;/tr&gt;<br>
+&nbsp;&nbsp;&lt;tr&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Alice&lt;/td&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;25&lt;/td&gt;<br>
+&nbsp;&nbsp;&lt;/tr&gt;<br>
+&lt;/table&gt;
+        </div>
+
+        <h3>Unordered List</h3>
+        <div class="code-box">
+&lt;ul&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Item 1&lt;/li&gt;<br>
+&nbsp;&nbsp;&lt;li&gt;Item 2&lt;/li&gt;<br>
+&lt;/ul&gt;
+        </div>
+
+        <h3>Definition List</h3>
+        <div class="code-box">
+&lt;dl&gt;<br>
+&nbsp;&nbsp;&lt;dt&gt;HTML&lt;/dt&gt;<br>
+&nbsp;&nbsp;&lt;dd&gt;A markup language for creating web pages.&lt;/dd&gt;<br>
+&lt;/dl&gt;
+        </div>
+
+        <h3>Form</h3>
+        <div class="code-box">
+&lt;form&gt;<br>
+&nbsp;&nbsp;&lt;label for="name"&gt;Name:&lt;/label&gt;<br>
+&nbsp;&nbsp;&lt;input type="text" id="name" name="name"&gt;<br>
+&nbsp;&nbsp;&lt;input type="submit" value="Submit"&gt;<br>
+&lt;/form&gt;
+        </div>
+
+        <h2>HTML5 APIs</h2>
+
+        <h3>Geolocation API</h3>
+        <div class="code-box">
+&lt;script&gt;<br>
+&nbsp;&nbsp;if (navigator.geolocation) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;navigator.geolocation.getCurrentPosition(function(position) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Latitude: " + position.coords.latitude);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log("Longitude: " + position.coords.longitude);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+&nbsp;&nbsp;} else {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("Geolocation is not supported.");<br>
+&nbsp;&nbsp;}<br>
+&lt;/script&gt;
+        </div>
+
+        <h3>Local Storage API</h3>
+        <div class="code-box">
+&lt;script&gt;<br>
+&nbsp;&nbsp;localStorage.setItem("name", "Bryson");<br>
+&nbsp;&nbsp;console.log(localStorage.getItem("name"));<br>
+&lt;/script&gt;
+        </div>
+    </section>
+    <footer>
+        <p>© Bryson Harvey</p>
+        <p>Instagram: <a href="https://www.instagram.com/freeorikyx" target="_blank">@freeorikyx</a><br>
+           Facebook: <a href="https://www.facebook.com/bryson.harvey" target="_blank">Bryson Harvey</a><br>
+           Email: <a href="mailto:b21227127@gmail.com">b21227127@gmail.com</a><br>
+           Discord Server: <a href="https://discord.gg/ZPXh9xUW8A" target="_blank">Join Here</a></p>
+    </footer>
+</body>
+</html>
