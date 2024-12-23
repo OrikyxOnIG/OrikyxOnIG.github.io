@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning C++</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #FFD700;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #FFD700;
+            color: #000;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header nav a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h2, h3, h4 {
+            color: #FFD700;
+        }
+
+        code, pre {
+            display: block;
+            background: #333;
+            color: #FFD700;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+            background: #FFD700;
+            color: #000;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        footer .socials a {
+            display: block;
+            margin: 5px 0;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer .socials a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learning C++</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <h3>Basic Syntax</h3>
+            <h4>Hello World Program</h4>
+            <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+    return 0;
+}</code></pre>
+            
+            <h4>Comments</h4>
+            <pre><code>// This is a single-line comment
+/* This is a 
+   multi-line comment */</code></pre>
+            
+            <h4>Variables and Data Types</h4>
+            <pre><code>int myInt = 10;
+float myFloat = 10.5;
+char myChar = 'A';
+string myString = "Hello";
+bool myBool = true;</code></pre>
+            
+            <h4>Constants</h4>
+            <pre><code>const int myConstant = 100;</code></pre>
+        </section>
+
+        <section>
+            <h3>Control Structures</h3>
+            <h4>If-Else</h4>
+            <pre><code>if (x &gt; y) {
+    cout &lt;&lt; "x is greater";
+} else {
+    cout &lt;&lt; "y is greater";
+}</code></pre>
+
+            <h4>Switch-Case</h4>
+            <pre><code>switch (x) {
+    case 1: 
+        cout &lt;&lt; "One"; 
+        break;
+    case 2: 
+        cout &lt;&lt; "Two"; 
+        break;
+    default: 
+        cout &lt;&lt; "Default case";
+}</code></pre>
+        </section>
+
+        <section>
+            <h3>Loops</h3>
+            <h4>For Loop</h4>
+            <pre><code>for (int i = 0; i &lt; 10; i++) {
+    cout &lt;&lt; i &lt;&lt; endl;
+}</code></pre>
+
+            <h4>While Loop</h4>
+            <pre><code>while (x &lt; 10) {
+    cout &lt;&lt; x &lt;&lt; endl;
+    x++;
+}</code></pre>
+
+            <h4>Do-While Loop</h4>
+            <pre><code>do {
+    cout &lt;&lt; "Looping";
+} while (x &lt; 10);</code></pre>
+
+            <h4>Break and Continue</h4>
+            <pre><code>for (int i = 0; i &lt; 10; i++) {
+    if (i == 5) {
+        continue; // Skip the rest of the loop when i is 5
+    }
+    if (i == 8) {
+        break; // Exit the loop when i is 8
+    }
+    cout &lt;&lt; i &lt;&lt; endl;
+}</code></pre>
+        </section>
+
+        <section>
+            <h3>Functions</h3>
+            <h4>Function Definition</h4>
+            <pre><code>int add(int a, int b) {
+    return a + b;
+}</code></pre>
+
+            <h4>Function Declaration</h4>
+            <pre><code>int add(int a, int b);</code></pre>
+
+            <h4>Function Overloading</h4>
+            <pre><code>int add(int a, int b) {
+    return a + b;
+}
+
+double add(double a, double b) {
+    return a + b;
+}</code></pre>
+
+            <h4>Default Arguments</h4>
+            <pre><code>int add(int a, int b = 5) {
+    return a + b;
+}</code></pre>
+
+            <h4>Return by Reference</h4>
+            <pre><code>int& increment(int& value) {
+    value++;
+    return value;
+}</code></pre>
+        </section>
+
+        <section>
+            <h3>Arrays and Strings</h3>
+            <h4>Array Declaration</h4>
+            <pre><code>int arr[5] = {1, 2, 3, 4, 5};</code></pre>
+
+            <h4>Array Iteration</h4>
+            <pre><code>for (int i = 0; i &lt; 5; i++) {
+    cout &lt;&lt; arr[i] &lt;&lt; endl;
+}</code></pre>
+
+            <h4>String Handling</h4>
+            <pre><code>string str = "Hello";
+cout &lt;&lt; str.length();</code></pre>
+
+            <h4>Multidimensional Arrays</h4>
+            <pre><code>int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};</code></pre>
+        </section>
+
+        <section>
+            <h3>Pointers and Memory Management</h3>
+            <h4>Pointer Declaration</h4>
+            <pre><code>int* ptr;</code></pre>
+
+            <h4>Pointer Initialization</h4>
+            <pre><code>int x = 10;
+int* ptr = &x;</code></pre>
+
+            <h4>Dereferencing Pointers</h4>
+            <pre><code>int value = *ptr;</code></pre>
+
+            <h4>Dynamic Memory Allocation</h4>
+            <pre><code>int* ptr = new int;
+*ptr = 10;</code></pre>
+
+            <h4>Array of Pointers</h4>
+            <pre><code>int* arr[5];</code></pre>
+        </section>
+
+        <section>
+            <h3>Object-oriented Programming</h3>
+            <h4>Class Declaration</h4>
+            <pre><code>class MyClass {
+public:
+    int myVar;
+    void myMethod() {
+        cout &lt;&lt; "Hello!";
+    }
+};</code></pre>
+
+            <h4>Constructor and Destructor</h4>
+            <pre><code>class MyClass {
+public:
+    MyClass() { cout &lt;&lt; "Constructor"; }
+    ~MyClass() { cout &lt;&lt; "Destructor"; }
+};</code></pre>
+
+            <h4>Inheritance</h4>
+            <pre><code>class Animal {
+public:
+    void eat() { cout &lt;&lt; "Eating"; }
+};
+
+class Dog : public Animal {
+public:
+    void bark() { cout &lt;&lt; "Barking"; }
+};</code></pre>
+
+            <h4>Polymorphism</h4>
+            <pre><code>class Animal {
+public:
+    virtual void speak() {
+        cout &lt;&lt; "Animal sound";
+    }
+};
+
+class Dog : public Animal {
+public:
+    void speak() override {
+        cout &lt;&lt; "Woof";
+    }
+};</code></pre>
+
+            <h4>Encapsulation (Private Members)</h4>
+            <pre><code>class MyClass {
+private:
+    int myVar;
+public:
+    void setMyVar(int value) { myVar = value; }
+    int getMyVar() { return myVar; }
+};</code></pre>
+
+            <h4>Abstract Class</h4>
+            <pre><code>class Shape {
+public:
+    virtual void draw() = 0;  // Pure virtual function
+};</code></pre>
+
+            <h4>Friend Functions</h4>
+            <pre><code>class MyClass {
+private:
+    int myVar;
+public:
+    MyClass() : myVar(0) {}
+    friend void show(MyClass obj);
+};
+
+void show(MyClass obj) {
+    cout &lt;&lt; obj.myVar;
+}</code></pre>
+        </section>
+
+<section>
+            <h3>Exceptional Handling</h3>
+            <h4>Try-Catch Block</h4>
+            <pre><code>try {
+    int x = 10;
+    if (x == 10) {
+        throw "Error: x is 10";
+    }
+} catch (const char* msg) {
+    cout &lt;&lt; msg;
+}</code></pre>
+
+            <h4>Custom Exceptions</h4>
+            <pre><code>class MyException : public exception {
+public:
+    const char* what() const noexcept override {
+        return "Custom exception occurred!";
+    }
+};
+
+try {
+    throw MyException();
+} catch (const MyException& e) {
+    cout &lt;&lt; e.what();
+}</code></pre>
+        </section>
+
+        <section>
+            <h3>Templates</h3>
+            <h4>Function Template</h4>
+            <pre><code>template &lt;typename T&gt;
+T add(T a, T b) {
+    return a + b;
+}</code></pre>
+
+            <h4>Class Template</h4>
+            <pre><code>template &lt;typename T&gt;
+class MyClass {
+    T value;
+public:
+    MyClass(T val) : value(val) {}
+    T getValue() { return value; }
+};</code></pre>
+        </section>
+
+        <section>
+            <h3>Standard Template Library</h3>
+            <h4>Vector (Dynamic Array)</h4>
+            <pre><code>#include &lt;vector&gt;
+
+vector&lt;int&gt; vec = {1, 2, 3};
+vec.push_back(4);
+for (int i : vec) {
+    cout &lt;&lt; i &lt;&lt; " ";
+}</code></pre>
+
+            <h4>List (Doubly Linked List)</h4>
+            <pre><code>#include &lt;list&gt;
+
+list&lt;int&gt; lst = {1, 2, 3};
+lst.push_back(4);
+for (int i : lst) {
+    cout &lt;&lt; i &lt;&lt; " ";
+}</code></pre>
+
+            <h4>Map (Key-Value Pair)</h4>
+            <pre><code>#include &lt;map&gt;
+
+map&lt;int, string&gt; myMap;
+myMap[1] = "One";
+myMap[2] = "Two";
+for (auto& pair : myMap) {
+    cout &lt;&lt; pair.first &lt;&lt; ": " &lt;&lt; pair.second &lt;&lt; endl;
+}</code></pre>
+
+            <h4>Set (Unique Elements)</h4>
+            <pre><code>#include &lt;set&gt;
+
+set&lt;int&gt; mySet = {1, 2, 3};
+mySet.insert(4);
+for (int i : mySet) {
+    cout &lt;&lt; i &lt;&lt; " ";
+}</code></pre>
+
+            <h4>Iterator</h4>
+            <pre><code>#include &lt;vector&gt;
+
+vector&lt;int&gt; vec = {1, 2, 3};
+for (auto it = vec.begin(); it != vec.end(); ++it) {
+    cout &lt;&lt; *it &lt;&lt; " ";
+}</code></pre>
+        </section>
+
+        <section>
+            <h3>C++11/14/17 Features</h3>
+            <h4>Auto keyword</h4>
+            <pre><code>auto x = 10; // Compiler infers the type</code></pre>
+
+            <h4>Lambda Expressions</h4>
+            <pre><code>auto add = [](int a, int b) { return a + b; };
+cout &lt;&lt; add(3, 4);</code></pre>
+        </section>
+
+        <section>
+            <h3>Advanced Pointers and Memory Management</h3>
+            <h4>Smart Pointer (Unique Pointer, Shared Pointer, Weak Pointer, Raw Pointers)</h4>
+            <pre><code>#include &lt;memory&gt;
+
+unique_ptr&lt;int&gt; uptr = make_unique&lt;int&gt;(10);
+shared_ptr&lt;int&gt; sptr = make_shared&lt;int&gt;(20);
+weak_ptr&lt;int&gt; wptr = sptr;
+int* rawPtr = new int(30);
+
+cout &lt;&lt; *uptr &lt;&lt; " " &lt;&lt; *sptr &lt;&lt; " " &lt;&lt; *rawPtr;</code></pre>
+
+            <h4>Memory Management with new[] and delete[]</h4>
+            <pre><code>int* arr = new int[5];
+for (int i = 0; i &lt; 5; i++) {
+    arr[i] = i;
+}
+delete[] arr;</code></pre>
+        </section>
+
+        <section>
+            <h3>Advanced Classes and Objects</h3>
+            <h4>Move Constructor</h4>
+            <pre><code>class MyClass {
+public:
+    int* data;
+    MyClass(int val) : data(new int(val)) {}
+    ~MyClass() { delete data; }
+
+    // Move Constructor
+    MyClass(MyClass&& other) noexcept : data(other.data) {
+        other.data = nullptr;
+    }
+};</code></pre>
+
+            <h4>Move Assignment Operator</h4>
+            <pre><code>MyClass& operator=(MyClass&& other) noexcept {
+    if (this != &other) {
+        delete data;
+        data = other.data;
+        other.data = nullptr;
+    }
+    return *this;
+}</code></pre>
+
+            <h4>Copy Semantics (Rule of Three/Five)</h4>
+            <pre><code>class MyClass {
+private:
+    int* data;
+public:
+    MyClass(int val) : data(new int(val)) {}
+    ~MyClass() { delete data; }
+
+    // Copy Constructor
+    MyClass(const MyClass& other) : data(new int(*other.data)) {}
+
+    // Copy Assignment Operator
+    MyClass& operator=(const MyClass& other) {
+        if (this != &other) {
+            delete data;
+            data = new int(*other.data);
+        }
+        return *this;
+    }
+};</code></pre>
+        </section>
+
+        <section>
+            <h3>Advanced Inheritance</h3>
+            <h4>Virtual Inheritance</h4>
+            <pre><code>class A {
+public:
+    virtual void show() { cout &lt;&lt; "Class A"; }
+};
+
+class B : virtual public A {
+public:
+    void show() override { cout &lt;&lt; "Class B"; }
+};</code></pre>
+
+            <h4>Virtual Destructor</h4>
+            <pre><code>class Base {
+public:
+    virtual ~Base() { cout &lt;&lt; "Base Destructor"; }
+};
+
+class Derived : public Base {
+public:
+    ~Derived() override { cout &lt;&lt; "Derived Destructor"; }
+};</code></pre>
+
+            <h4>Abstract Base Class (Pure Virtual Functions)</h4>
+            <pre><code>class Shape {
+public:
+    virtual void draw() = 0; // Pure virtual function
+    virtual ~Shape() {}
+};</code></pre>
+        </section>
+
+        <section>
+            <h3>Templates (Advanced)</h3>
+            <h4>Full Specialization</h4>
+            <pre><code>template &lt;typename T&gt;
+class MyClass {
+public:
+    T value;
+};
+
+template &lt;&gt;
+class MyClass&lt;int&gt; {
+public:
+    int value;
+    MyClass(int val) : value(val) {}
+};</code></pre>
+
+            <h4>Partial Specialization</h4>
+            <pre><code>template &lt;typename T, typename U&gt;
+class MyClass {
+    T value1;
+    U value2;
+};
+
+template &lt;typename U&gt;
+class MyClass&lt;int, U&gt; {
+    int value1;
+    U value2;
+};</code></pre>
+
+            <h4>Variadic Templates</h4>
+            <pre><code>template &lt;typename... Args&gt;
+void print(Args... args) {
+    (cout &lt;&lt; ... &lt;&lt; args) &lt;&lt; endl;
+}</code></pre>
+
+            <h4>SFINAE (Substitution Failure is Not an Error)</h4>
+            <pre><code>template &lt;typename T, typename = void&gt;
+struct is_integral : std::false_type {};
+
+template &lt;typename T&gt;
+struct is_integral&lt;T, std::enable_if_t&lt;std::is_integral&lt;T&gt;::value&gt;&gt; : std::true_type {}; </code></pre>
+        </section>
+
+        <section>
+            <h3>C++11/14/17/20 Features</h3>
+            <h4>constexpr (Compile-Time Functions)</h4>
+            <pre><code>constexpr int square(int x) {
+    return x * x;
+}</code></pre>
+
+            <h4>noexcept</h4>
+            <pre><code>void func() noexcept {
+    cout &lt;&lt; "This function doesn't throw exceptions";
+}</code></pre>
+
+            <h4>Type Deduction with auto</h4>
+            <pre><code>auto x = 10;  // Compiler deduces type as int</code></pre>
+
+            <h4>std::optional (C++17)</h4>
+            <pre><code>#include &lt;optional&gt;
+std::optional&lt;int&gt; getValue() {
+    return 42;
+}</code></pre>
+
+            <h4>Structured Bindings (C++17)</h4>
+            <pre><code>auto [x, y] = std::make_pair(1, 2);</code></pre>
+
+            <h4>std::variant (C++17)</h4>
+            <pre><code>#include &lt;variant&gt;
+std::variant&lt;int, float&gt; v = 42;
+std::cout &lt;&lt; std::get&lt;int&gt;(v);</code></pre>
+
+            <h4>std::ranges (C++20)</h4>
+            <pre><code>#include &lt;ranges&gt;
+auto result = std::views::transform(v, [](int n) { return n * 2; });</code></pre>
+
+            <h4>concepts (C++20)</h4>
+            <pre><code>template &lt;typename T&gt;
+concept Incrementable = requires(T a) {
+    { ++a } -> std::same_as&lt;T&gt;;
+};
+</code></pre>
+        </section>
+
+        <section>
+            <h3>Concurrency and Multithreading</h3>
+            <h4>Create Threads</h4>
+            <pre><code>#include &lt;thread&gt;
+
+void printHello() {
+    cout &lt;&lt; "Hello from thread!";
+}
+
+int main() {
+    std::thread t(printHello);
+    t.join();
+}</code></pre>
+
+            <h4>Mutexes (Thread Synchronization)</h4>
+            <pre><code>#include &lt;mutex&gt;
+
+std::mutex mtx;
+
+void printNumbers() {
+    mtx.lock();
+    for (int i = 0; i &lt; 5; ++i) {
+        cout &lt;&lt; i &lt;&lt; " ";
+    }
+    mtx.unlock();
+}</code></pre>
+
+            <h4>Atomic Operations</h4>
+            <pre><code>#include &lt;atomic&gt;
+
+std::atomic&lt;int&gt; counter = 0;
+counter.fetch_add(1);
+</code></pre>
+        </section>
+
+        <footer>
+            <p>This website was coded by Bryson Harvey</p>
+            <div class="socials">
+                <a href="https://instagram.com/freeorikyx" target="_blank">Instagram: @freeorikyx</a>
+                <a href="https://facebook.com" target="_blank">Facebook: Bryson Harvey</a>
+                <a href="https://discord.gg/ZPXh9xUW8A" target="_blank">Discord Server</a>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
