@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Python</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, black, gold);
+            color: white;
+            line-height: 1.6;
+        }
+        header {
+            background: black;
+            color: gold;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: gold;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+        .content {
+            padding: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid gold;
+            padding-bottom: 5px;
+        }
+        pre {
+            background: black;
+            color: gold;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        footer a {
+            color: gold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learning Python</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+    <div class="content">
+        <h2>Python Cheat Sheet</h2>
+        <h3>Variables and Data Types</h3>
+        <pre>
+# Variables and Data Types
+x = 10         # Integer
+y = 3.14       # Float
+name = "Bryson" # String
+is_active = True # Boolean
+        </pre>
+        <h3>Basic Input and Output</h3>
+        <pre>
+# Input and Output
+name = input("Enter your name: ")
+print(f"Hello, {name}!")
+        </pre>
+        <h3>Control Flow</h3>
+        <pre>
+# Control Flow
+x = 10
+if x > 5:
+    print("x is greater than 5")
+elif x == 5:
+    print("x is 5")
+else:
+    print("x is less than 5")
+        </pre>
+        <!-- Add other sections with code examples -->
+        <h3>Advanced Modules</h3>
+        <h4>Regular Expressions</h4>
+        <pre>
+# Regular Expressions
+import re
+
+pattern = r'\d+'  # Matches digits
+text = "123 apples and 456 bananas"
+matches = re.findall(pattern, text)
+print(matches)  # Output: ['123', '456']
+        </pre>
+        <h4>Argparse for Command-Line Scripts</h4>
+        <pre>
+# Argparse Example
+import argparse
+
+parser = argparse.ArgumentParser(description="Process some integers.")
+parser.add_argument('numbers', metavar='N', type=int, nargs='+', help='an integer for the accumulator')
+parser.add_argument('--sum', dest='accumulate', action='store_const', const=sum, default=max, help='sum the integers (default: find the max)')
+args = parser.parse_args()
+print(args.accumulate(args.numbers))
+        </pre>
+        <h4>Dataclasses</h4>
+        <pre>
+# Dataclasses
+from dataclasses import dataclass
+
+@dataclass
+class Person:
+    name: str
+    age: int
+
+p = Person("Bryson", 17)
+print(p)
+        </pre>
+        <h3>Functions</h3>
+        <pre>
+# Functions
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Bryson"))
+        </pre>
+        <h3>Lists</h3>
+        <pre>
+# Lists
+fruits = ["apple", "banana", "cherry"]
+fruits.append("orange")
+print(fruits)
+        </pre>
+        <h3>Dictionaries</h3>
+        <pre>
+# Dictionaries
+person = {"name": "Bryson", "age": 17}
+print(person["name"])
+        </pre>
+        <h3>Common String Methods</h3>
+        <pre>
+# Common String Methods
+text = " Hello, Python! "
+print(text.strip().lower().replace("python", "world"))
+        </pre>
+        <h3>Importing Libraries</h3>
+        <pre>
+# Importing Libraries
+import math
+
+print(math.sqrt(16))
+        </pre>
+        <h3>Exception Handling</h3>
+        <pre>
+# Exception Handling
+try:
+    x = int("hello")
+except ValueError as e:
+    print(f"Error: {e}")
+        </pre>
+        <h3>File Handling</h3>
+        <pre>
+# File Handling
+with open("example.txt", "w") as file:
+    file.write("Hello, World!")
+        </pre>
+        <h3>List Comprehension</h3>
+        <pre>
+# List Comprehension
+squares = [x**2 for x in range(10)]
+print(squares)
+        </pre>
+        <h3>Advanced Data Structures</h3>
+        <h4>DefaultDict</h4>
+        <pre>
+# DefaultDict
+from collections import defaultdict
+
+dd = defaultdict(int)
+dd["key"] += 1
+print(dd)
+        </pre>
+        <h4>Counter</h4>
+        <pre>
+# Counter
+from collections import Counter
+
+counter = Counter("abracadabra")
+print(counter)
+        </pre>
+        <h4>NamedTuple</h4>
+        <pre>
+# NamedTuple
+from collections import namedtuple
+
+Point = namedtuple("Point", "x y")
+p = Point(10, 20)
+print(p.x, p.y)
+        </pre>
+        <h4>Deque</h4>
+        <pre>
+# Deque
+from collections import deque
+
+dq = deque([1, 2, 3])
+dq.appendleft(0)
+print(dq)
+        </pre>
+        <h3>Functional Programming</h3>
+        <h4>Lambda Functions</h4>
+        <pre>
+# Lambda Functions
+square = lambda x: x**2
+print(square(4))
+        </pre>
+        <h4>Map, Filter, Reduce</h4>
+        <pre>
+# Map, Filter, Reduce
+from functools import reduce
+
+nums = [1, 2, 3, 4]
+squared = list(map(lambda x: x**2, nums))
+evens = list(filter(lambda x: x % 2 == 0, nums))
+total = reduce(lambda x, y: x + y, nums)
+
+print(squared, evens, total)
+        </pre>
+        <h4>Generator Expressions</h4>
+        <pre>
+# Generator Expressions
+gen = (x**2 for x in range(5))
+for num in gen:
+    print(num)
+        </pre>
+        <h3>Object-Oriented Programming</h3>
+        <h4>Properties with @property</h4>
+        <pre>
+# @property
+class Circle:
+    def __init__(self, radius):
+        self._radius = radius
+
+    @property
+    def radius(self):
+        return self._radius
+
+    @radius.setter
+    def radius(self, value):
+        self._radius = value
+
+c = Circle(5)
+print(c.radius)
+c.radius = 10
+        </pre>
+        <h4>Dunder Methods</h4>
+        <pre>
+# Dunder Methods
+class MyClass:
+    def __init__(self, value):
+        self.value = value
+
+    def __str__(self):
+        return f"MyClass({self.value})"
+
+obj = MyClass(42)
+print(obj)
+        </pre>
+        <h4>Abstract Base Classes</h4>
+        <pre>
+# Abstract Base Classes
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    @abstractmethod
+    def sound(self):
+        pass
+
+class Dog(Animal):
+    def sound(self):
+        return "Woof!"
+
+dog = Dog()
+print(dog.sound())
+        </pre>
+        <h3>Advanced Functions</h3>
+        <h4>Closures</h4>
+        <pre>
+# Closures
+def outer_func(x):
+    def inner_func(y):
+        return x + y
+    return inner_func
+
+add_five = outer_func(5)
+print(add_five(10))  # Output: 15
+        </pre>
+        <h4>Decorators</h4>
+        <pre>
+# Decorators
+def decorator(func):
+    def wrapper():
+        print("Before function call")
+        func()
+        print("After function call")
+    return wrapper
+
+@decorator
+def say_hello():
+    print("Hello!")
+
+say_hello()
+        </pre>
+        <h3>Advanced Iterators</h3>
+        <h4>Custom Iterator</h4>
+        <pre>
+# Custom Iterator
+class MyIterator:
+    def __init__(self, limit):
+        self.limit = limit
+        self.counter = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.counter < self.limit:
+            self.counter += 1
+            return self.counter
+        else:
+            raise StopIteration
+
+it = MyIterator(5)
+for num in it:
+    print(num)
+        </pre>
+        <h4>Generators</h4>
+        <pre>
+# Generators
+def my_generator():
+    for i in range(5):
+        yield i
+
+for value in my_generator():
+    print(value)
+        </pre>
+        <h3>File Handling</h3>
+        <h4>Context Managers</h4>
+        <pre>
+# Context Managers
+with open("example.txt", "w") as file:
+    file.write("Hello, World!")
+# File is automatically closed here
+        </pre>
+        <h4>Custom Context Manager</h4>
+        <pre>
+# Custom Context Manager
+class MyContext:
+    def __enter__(self):
+        print("Entering context")
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print("Exiting context")
+
+with MyContext():
+    print("Inside context")
+        </pre>
+        <h3>Advanced Modules</h3>
+        <h4>Logging</h4>
+        <pre>
+# Logging
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logging.info("This is an info message")
+        </pre>
+        <h4>Profiling</h4>
+        <pre>
+# Profiling
+import cProfile
+
+def test_function():
+    for i in range(1000):
+        pass
+
+cProfile.run('test_function()')
+        </pre>
+        <h3>Concurrency and Parallelism</h3>
+        <h4>Multithreading</h4>
+        <pre>
+# Multithreading
+import threading
+
+def print_numbers():
+    for i in range(5):
+        print(i)
+
+thread = threading.Thread(target=print_numbers)
+thread.start()
+thread.join()
+        </pre>
+        <h4>Multiprocessing</h4>
+        <pre>
+# Multiprocessing
+from multiprocessing import Process
+
+def print_numbers():
+    for i in range(5):
+        print(i)
+
+process = Process(target=print_numbers)
+process.start()
+process.join()
+        </pre>
+        <h4>Asyncio</h4>
+        <pre>
+# Asyncio
+import asyncio
+
+async def main():
+    print("Hello")
+    await asyncio.sleep(1)
+    print("World")
+
+asyncio.run(main())
+        </pre>
+        <!-- Continue with other advanced topics -->
+    </div>
+    <footer>
+        <p>&copy; 2024 Bryson Harvey | 
+            <a href="https://www.instagram.com/freeorikyx" target="_blank">@freeorikyx</a> | 
+            <a href="https://www.facebook.com/Bryson Harvey" target="_blank">Facebook</a> | 
+            Email: <a href="mailto:b21227127@gmail.com">b21227127@gmail.com</a>
+        </p>
+    </footer>
+</body>
+</html>

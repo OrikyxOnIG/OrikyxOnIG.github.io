@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning C#</title>
+    <style>
+        /* Background Gradient */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, black, gold);
+            color: white;
+        }
+
+        /* Header Styling */
+        header {
+            background: black;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: gold;
+            margin: 0;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: gold;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        header a:hover {
+            background: darkgoldenrod;
+        }
+
+        /* Content Styling */
+        .content {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+        }
+
+        .content h2, .content h3 {
+            color: gold;
+        }
+
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        pre {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+        }
+
+        /* Footer Styling */
+        footer {
+            background: black;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: gold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learning C#</h1>
+        <a href="index.html">Home</a>
+    </header>
+
+    <div class="content">
+        <p>
+            C# (pronounced "C-sharp") is a modern, object-oriented programming language developed by Microsoft.  
+            It is widely used for building applications ranging from simple desktop programs to complex enterprise-level web and mobile applications.  
+            Known for its simplicity and versatility, C# is a popular choice for developing games (via Unity), creating APIs, and building software for Windows.
+        </p>
+
+        <h2>C# Cheat Sheet</h2>
+
+        <h3>Variables and Data Types</h3>
+        <pre>
+int age = 25;          // Integer
+double pi = 3.14;      // Double
+char grade = 'A';      // Character
+string name = "Bryson"; // String
+bool isActive = true;  // Boolean
+        </pre>
+
+        <h3>Basic Input and Output</h3>
+        <pre>
+Console.WriteLine("Enter your name:");
+string name = Console.ReadLine();
+Console.WriteLine($"Hello, {name}!");
+        </pre>
+
+        <h3>Control Flow</h3>
+        <pre>
+int number = 10;
+
+if (number > 5)
+    Console.WriteLine("Number is greater than 5");
+else if (number == 5)
+    Console.WriteLine("Number is 5");
+else
+    Console.WriteLine("Number is less than 5");
+
+for (int i = 0; i < 5; i++)
+    Console.WriteLine($"Iteration {i}");
+
+while (number > 0)
+{
+    Console.WriteLine(number);
+    number--;
+}
+        </pre>
+
+        <h3>Functions and Methods</h3>
+        <pre>
+int Add(int a, int b)
+{
+    return a + b;
+}
+
+Console.WriteLine(Add(5, 10)); // Output: 15
+        </pre>
+
+        <h3>Classes and Objects</h3>
+        <pre>
+class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public void Introduce()
+    {
+        Console.WriteLine($"Hi, I'm {Name}, and I'm {Age} years old.");
+    }
+}
+
+Person person = new Person { Name = "Bryson", Age = 17 };
+person.Introduce();
+        </pre>
+
+<h3>Exception Handling</h3>
+        <pre>
+try
+{
+    int result = 10 / 0;
+}
+catch (DivideByZeroException ex)
+{
+    Console.WriteLine($"Error: {ex.Message}");
+}
+finally
+{
+    Console.WriteLine("End of program.");
+}
+        </pre>
+
+        <h3>File Handling</h3>
+        <pre>
+using System.IO;
+
+File.WriteAllText("example.txt", "Hello, World!");
+string content = File.ReadAllText("example.txt");
+Console.WriteLine(content);
+        </pre>
+
+        <h3>LINQ Queries</h3>
+        <pre>
+using System.Linq;
+
+int[] numbers = { 1, 2, 3, 4, 5, 6 };
+var evenNumbers = numbers.Where(n => n % 2 == 0).ToList();
+
+foreach (var num in evenNumbers)
+    Console.WriteLine(num);
+        </pre>
+
+        <h3>Inheritance and Polymorphism</h3>
+        <pre>
+class Animal
+{
+    public virtual void Speak()
+    {
+        Console.WriteLine("Animal speaks.");
+    }
+}
+
+class Dog : Animal
+{
+    public override void Speak()
+    {
+        Console.WriteLine("Dog barks.");
+    }
+}
+
+Animal myDog = new Dog();
+myDog.Speak(); // Output: Dog barks.
+        </pre>
+
+        <h3>Abstract Classes and Interfaces</h3>
+        <pre>
+abstract class Shape
+{
+    public abstract double GetArea();
+}
+
+class Circle : Shape
+{
+    public double Radius { get; set; }
+    public override double GetArea() => Math.PI * Radius * Radius;
+}
+
+Circle circle = new Circle { Radius = 5 };
+Console.WriteLine(circle.GetArea());
+        </pre>
+
+        <h3>Delegates and Events</h3>
+        <pre>
+delegate void Notify(string message);
+
+void PrintMessage(string message)
+{
+    Console.WriteLine(message);
+}
+
+Notify notify = PrintMessage;
+notify("Hello via delegate!");
+        </pre>
+
+        <h3>Asynchronous Programming</h3>
+        <pre>
+async Task<string> GetDataAsync()
+{
+    await Task.Delay(1000); // Simulate delay
+    return "Data fetched";
+}
+
+string result = await GetDataAsync();
+Console.WriteLine(result);
+        </pre>
+
+        <h3>Generics</h3>
+        <pre>
+class Box<T>
+{
+    public T Value { get; set; }
+}
+
+Box<int> intBox = new Box<int> { Value = 10 };
+Box<string> strBox = new Box<string> { Value = "Hello" };
+
+Console.WriteLine(intBox.Value);
+Console.WriteLine(strBox.Value);
+        </pre>
+
+        <h3>Dependency Injection</h3>
+        <pre>
+public interface IService
+{
+    void Serve();
+}
+
+public class Service : IService
+{
+    public void Serve() => Console.WriteLine("Service Called");
+}
+
+public class Consumer
+{
+    private readonly IService _service;
+
+    public Consumer(IService service) => _service = service;
+
+    public void Start() => _service.Serve();
+}
+
+IService service = new Service();
+Consumer consumer = new Consumer(service);
+consumer.Start();
+        </pre>
+
+        <h3>Multithreading</h3>
+        <pre>
+using System.Threading;
+
+void PrintNumbers()
+{
+    for (int i = 0; i < 5; i++)
+    {
+        Console.WriteLine(i);
+        Thread.Sleep(500);
+    }
+}
+
+Thread thread = new Thread(PrintNumbers);
+thread.Start();
+thread.Join();
+        </pre>
+
+        <h3>Reflection</h3>
+        <pre>
+using System.Reflection;
+
+Type type = typeof(Person);
+Console.WriteLine("Properties:");
+foreach (var prop in type.GetProperties())
+    Console.WriteLine(prop.Name);
+        </pre>
+
+        <h3>Parallel Programming</h3>
+        <pre>
+using System.Threading.Tasks;
+
+Parallel.For(0, 10, i =>
+{
+    Console.WriteLine($"Processing {i}");
+});
+        </pre>
+
+        <h3>Singleton Pattern</h3>
+        <pre>
+class Singleton
+{
+    private static Singleton _instance;
+
+    private Singleton() { }
+
+    public static Singleton Instance => _instance ??= new Singleton();
+}
+
+Singleton singleton1 = Singleton.Instance;
+Singleton singleton2 = Singleton.Instance;
+
+Console.WriteLine(object.ReferenceEquals(singleton1, singleton2)); // True
+        </pre>
+<h3>Compilers for C#</h3>
+        <p>
+            Below is a list of popular compilers and tools for C# development:
+        </p>
+        <ul>
+            <li>
+                <strong>Microsoft Visual C# Compiler (csc):</strong> The default C# compiler that comes with the .NET SDK. It's used for compiling C# applications into .NET executables or libraries.
+            </li>
+            <li>
+                <strong>Mono Compiler:</strong> An open-source, cross-platform C# compiler that allows developers to build and run C# applications on multiple platforms, including Linux and macOS.
+            </li>
+            <li>
+                <strong>Roslyn (Microsoft Code Analysis):</strong> A compiler as a service that provides rich code analysis and is used in Visual Studio and other tools. It includes both the C# and Visual Basic compilers.
+            </li>
+            <li>
+                <strong>JetBrains Rider:</strong> A cross-platform IDE for .NET development that includes a powerful built-in C# compiler.
+            </li>
+            <li>
+                <strong>DotGNU Portable.NET:</strong> A discontinued project that provided an alternative implementation of the CLI and a C# compiler.
+            </li>
+            <li>
+                <strong>Online C# Compilers:</strong> Several online tools, such as <a href="https://dotnetfiddle.net" target="_blank">DotNetFiddle</a> and <a href="https://replit.com/" target="_blank">Replit</a>, allow you to write and compile C# code without installing a compiler.
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>
+            Created by Bryson Harvey |  
+            Instagram: <a href="https://www.instagram.com/freeorikyx" target="_blank">@freeorikyx</a> |  
+            Facebook: <a href="https://facebook.com" target="_blank">Bryson Harvey</a> |  
+            Email: <a href="mailto:b21227127@gmail.com">b21227127@gmail.com</a>
+        </p>
+    </footer>
+</body>
+</html>
