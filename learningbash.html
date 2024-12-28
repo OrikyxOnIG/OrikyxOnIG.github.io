@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Bash</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #000000, #FFD700); /* Black to gold gradient */
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+        }
+        code {
+            background-color: #333;
+            color: #FFD700;
+            padding: 10px;
+            display: block;
+            white-space: pre-wrap;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer a {
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Learning Bash</h1>
+        <a href="index.html" style="color: #FFD700; text-decoration: none;">Home</a>
+    </header>
+
+    <div class="content">
+        <p>
+            Bash is a powerful shell used in Linux and Unix-like systems for command-line tasks. It's widely used for automation, 
+            system administration, and scripting, allowing users to perform operations such as file manipulation, process control, 
+            and network communication. With its scripting capabilities, Bash allows users to write complex programs to automate 
+            repetitive tasks.
+        </p>
+
+        <h2>Basic Bash Commands</h2>
+        <code>pwd</code>
+        <code>ls</code>
+        <code>cd <directory_name></code>
+        <code>mkdir <directory_name></code>
+        <code>touch <file_name></code>
+        <code>cp <source> <destination></code>
+        <code>mv <source> <destination></code>
+        <code>rm <file_name></code>
+        <code>rmdir <directory_name></code>
+
+        <h2>File Permissions</h2>
+        <code>chmod <permissions> <file_name></code>
+        <code>chown <user>:<group> <file_name></code>
+        <code>chgrp <group> <file_name></code>
+
+        <h2>Text Manipulation</h2>
+        <code>cat <file_name></code>
+        <code>less <file_name></code>
+        <code>grep "<search_term>" <file_name></code>
+        <code>sed -i 's/<old>/<new>/g' <file_name></code>
+        <code>nl <file_name></code>
+        <code>sort <file_name></code>
+        <code>wc <file_name></code>
+        <code>echo "text" > <file_name></code>
+        <code>echo "text" >> <file_name></code>
+
+        <h2>Process Management</h2>
+        <code>ps</code>
+        <code>ps aux</code>
+        <code>kill <PID></code>
+        <code>pkill <process_name></code>
+        <code>top</code>
+
+        <h2>Variables and Scripts</h2>
+        <code>variable_name="value"</code>
+        <code>echo $variable_name</code>
+        <code>nano script.sh</code>
+        <code>chmod +x script.sh</code>
+        <code>./script.sh</code>
+        <code>./script.sh arg1 arg2</code>
+
+        <h2>Loops</h2>
+        <code>for i in {1..5}; do echo "Number $i"; done</code>
+        <code>counter=1; while [ $counter -le 5 ]; do echo "Counter: $counter"; ((counter++)); done</code>
+        <code>counter=1; until [ $counter -gt 5 ]; do echo "Counter: $counter"; ((counter++)); done</code>
+
+        <h2>Conditional Statements</h2>
+        <code>if [ $x -eq 10 ]; then echo "x is 10"; fi</code>
+        <code>if [ $x -gt 10 ]; then echo "x is greater than 10"; else echo "x is less than or equal to 10"; fi</code>
+        <code>if [ $x -gt 10 ]; then echo "x is greater than 10"; elif [ $x -eq 10 ]; then echo "x is equal to 10"; else echo "x is less than 10"; fi</code>
+
+        <h2>Advanced Bash Concepts</h2>
+        <code>result=$(command)</code>
+        <code>command1 | command2</code>
+        <code>command > output.txt</code>
+        <code>command >> output.txt</code>
+        <code>command &</code>
+        <code>arr=("item1" "item2" "item3")</code>
+        <code>my_function() { echo "Hello from function"; } my_function</code>
+
+        <h2>File Compression and Archiving</h2>
+        <code>tar -cvf archive.tar /path/to/directory</code>
+        <code>tar -xvf archive.tar</code>
+        <code>tar -czvf archive.tar.gz /path/to/directory</code>
+        <code>tar -xzvf archive.tar.gz</code>
+        <code>zip archive.zip file1 file2 file3</code>
+        <code>unzip archive.zip</code>
+        <code>gzip file_name</code>
+        <code>gunzip file_name.gz</code>
+
+        <h2>Bash Scripting Advanced Concepts</h2>
+        <code>echo $1</code>
+        <code>echo $2</code>
+        <code>shift</code>
+        <code>echo $?</code>
+        <code>current_date=$(date); echo "The current date is: $current_date"</code>
+
+        <h2>Networking in Bash</h2>
+        <code>ifconfig</code>
+        <code>ping <hostname_or_ip></code>
+        <code>netstat -tuln</code>
+        <code>wget <url></code>
+        <code>curl -O <url></code>
+        <code>nslookup <hostname></code>
+        <code>traceroute <hostname_or_ip></code>
+
+        <h2>System Monitoring and Performance</h2>
+        <code>free -h</code>
+        <code>top</code>
+        <code>df -h</code>
+        <code>ps aux</code>
+        <code>uptime</code>
+        <code>uname -a</code>
+
+        <h2>Bash Scripting Best Practices</h2>
+        <code>#!/bin/bash</code>
+        <code>chmod +x script.sh</code>
+        <code>set -e</code>
+        <code>set -u</code>
+        <code>function my_function { echo "Hello from function"; }</code>
+
+        <h2>Bash Debugging</h2>
+        <code>set -v</code>
+        <code>set -x</code>
+        <code>trap 'echo "An error occurred!"' ERR</code>
+    </div>
+
+    <footer>
+        <p>
+            Created by Bryson Harvey |  
+            Instagram: <a href="https://www.instagram.com/freeorikyx" target="_blank">@freeorikyx</a> |  
+            Facebook: <a href="https://facebook.com" target="_blank">Bryson Harvey</a> |  
+            Email: <a href="mailto:b21227127@gmail.com">b21227127@gmail.com</a>
+        </p>
+    </footer>
+
+</body>
+</html>
