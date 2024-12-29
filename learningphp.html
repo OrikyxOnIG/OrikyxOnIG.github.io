@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning PHP</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, black, gold);
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        header nav {
+            margin-top: 10px;
+        }
+
+        header nav a {
+            color: gold;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Content */
+        main {
+            padding: 20px;
+        }
+
+        main h2 {
+            color: gold;
+        }
+
+        code {
+            display: block;
+            background-color: #222;
+            color: #0f0;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: gold;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header, footer {
+                text-align: center;
+            }
+
+            main {
+                padding: 10px;
+            }
+
+            code {
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            code {
+                font-size: 0.8em;
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learning PHP</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+   <main>
+    <h2>What is PHP?</h2>
+    <p>PHP is a widely-used, open-source scripting language designed for web development. It can be embedded into HTML and is primarily used for server-side web development, creating dynamic pages and interacting with databases.</p>
+
+    <h2>PHP Full Stack Cheatsheet</h2>
+    
+    <!-- Basics Section -->
+    <h3>Basics</h3>
+    <p>1. <strong>Variables and Data Types</strong> - Variables store data like strings, integers, and arrays.</p>
+    <code>
+    &lt;?php
+    $string = "Hello World"; // String
+    $int = 10; // Integer
+    $float = 10.5; // Float
+    $bool = true; // Boolean
+    $array = ["apple", "banana"]; // Array
+    ?&gt;
+    </code>
+
+    <p>2. <strong>Echo and Print</strong> - Output values to the screen.</p>
+    <code>
+    &lt;?php
+    echo "Hello, World!"; // Outputs text
+    print "PHP is awesome!"; // Another way to output text
+    ?&gt;
+    </code>
+
+    <p>3. <strong>Conditionals</strong> - Make decisions based on conditions.</p>
+    <code>
+    &lt;?php
+    $age = 20;
+    if ($age >= 18) {
+        echo "You are an adult.";
+    } else {
+        echo "You are a minor.";
+    }
+    ?&gt;
+    </code>
+
+    <p>4. <strong>Loops</strong> - Repeat code multiple times.</p>
+    <code>
+    &lt;?php
+    for ($i = 0; $i < 5; $i++) {
+        echo $i;
+    }
+    ?&gt;
+    </code>
+
+    <p>5. <strong>Functions</strong> - Group reusable blocks of code.</p>
+    <code>
+    &lt;?php
+    function greet($name) {
+        return "Hello, $name!";
+    }
+    echo greet("John");
+    ?&gt;
+    </code>
+
+    <p>6. <strong>Arrays</strong> - Store multiple values in one variable.</p>
+    <code>
+    &lt;?php
+    $fruits = ["Apple", "Banana", "Cherry"];
+    echo $fruits[0]; // Outputs: Apple
+    ?&gt;
+    </code>
+
+    <p>7. <strong>Array Functions</strong> - Functions that manipulate arrays.</p>
+    <code>
+    &lt;?php
+    $numbers = [1, 2, 3];
+    array_push($numbers, 4); // Adds 4 to the array
+    print_r($numbers); // Outputs: [1, 2, 3, 4]
+    ?&gt;
+    </code>
+
+    <p>8. <strong>String Manipulation</strong> - Modify strings.</p>
+    <code>
+    &lt;?php
+    $text = "Hello World";
+    echo strtoupper($text); // Outputs: HELLO WORLD
+    echo substr($text, 0, 5); // Outputs: Hello
+    ?&gt;
+    </code>
+
+    <p>9. <strong>Concatenation</strong> - Combine strings.</p>
+    <code>
+    &lt;?php
+    $firstName = "John";
+    $lastName = "Doe";
+    echo $firstName . " " . $lastName; // Outputs: John Doe
+    ?&gt;
+    </code>
+
+    <p>10. <strong>Data Type Conversion</strong> - Converting between data types.</p>
+    <code>
+    &lt;?php
+    $number = "10"; // String
+    $convertedNumber = (int)$number; // Converts to Integer
+    ?&gt;
+    </code>
+
+    <p>11. <strong>Null Coalescing Operator</strong> - Checks if a variable is set and not null.</p>
+    <code>
+    &lt;?php
+    $name = $user_name ?? 'Guest'; // If $user_name is not set, 'Guest' will be used
+    echo $name;
+    ?&gt;
+    </code>
+
+    <p>12. <strong>Type Checking</strong> - Ensure variables are of a specific type.</p>
+    <code>
+    &lt;?php
+    $var = 10;
+    if (is_int($var)) {
+        echo "This is an integer.";
+    }
+    ?&gt;
+    </code>
+
+    <!-- Intermediate Section -->
+    <h3>Intermediate</h3>
+    <p>1. <strong>Associative Arrays</strong> - Use keys and values to store data.</p>
+    <code>
+    &lt;?php
+    $person = ["name" => "John", "age" => 25];
+    echo $person["name"]; // Outputs: John
+    ?&gt;
+    </code>
+
+    <p>2. <strong>Switch Case</strong> - A more efficient way to handle multiple conditions.</p>
+    <code>
+    &lt;?php
+    $day = "Monday";
+    switch ($day) {
+        case "Monday":
+            echo "Start of the week!";
+            break;
+        case "Friday":
+            echo "Almost weekend!";
+            break;
+        default:
+            echo "Midweek.";
+    }
+    ?&gt;
+    </code>
+
+    <p>3. <strong>Includes</strong> - Include files into PHP scripts.</p>
+    <code>
+    &lt;?php
+    include 'header.php'; // Includes another file
+    require 'footer.php'; // Requires another file
+    ?&gt;
+    </code>
+
+    <p>4. <strong>Superglobals</strong> - Predefined variables in PHP.</p>
+    <code>
+    &lt;?php
+    $_POST['name'] = "John";
+    echo $_POST['name']; // Outputs: John
+    ?&gt;
+    </code>
+
+    <p>5. <strong>Forms Handling</strong> - Handle form data submission.</p>
+    <code>
+    &lt;form method="POST" action="process.php"&gt;
+        Name: &lt;input type="text" name="name"&gt;
+        &lt;input type="submit" value="Submit"&gt;
+    &lt;/form&gt;
+    </code>
+
+    <p>6. <strong>String Functions</strong> - Functions that work with strings.</p>
+    <code>
+    &lt;?php
+    $text = "hello";
+    echo strlen($text); // Outputs: 5
+    echo strpos($text, "e"); // Outputs: 1
+    ?&gt;
+    </code>
+
+    <p>7. <strong>File Handling</strong> - Work with files (read, write, delete).</p>
+    <code>
+    &lt;?php
+    $file = fopen("example.txt", "w");
+    fwrite($file, "Hello World!");
+    fclose($file);
+    ?&gt;
+    </code>
+
+    <p>8. <strong>Sessions</strong> - Store user data across pages.</p>
+    <code>
+    &lt;?php
+    session_start();
+    $_SESSION["username"] = "John";
+    echo $_SESSION["username"]; // Outputs: John
+    ?&gt;
+    </code>
+
+    <p>9. <strong>Cookies</strong> - Store user data on the client side.</p>
+    <code>
+    &lt;?php
+    setcookie("user", "John", time() + 3600); // Cookie expires in 1 hour
+    echo $_COOKIE["user"]; // Outputs: John
+    ?&gt;
+    </code>
+
+    <p>10. <strong>Database Connection (MySQLi)</strong> - Connecting to a database and performing queries.</p>
+    <code>
+    &lt;?php
+    $conn = new mysqli("localhost", "root", "", "test_db");
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    $result = $conn->query("SELECT * FROM users");
+    while ($row = $result->fetch_assoc()) {
+        echo $row["name"];
+    }
+    ?&gt;
+    </code>
+
+    <p>11. <strong>Object-Oriented Programming (OOP)</strong> - Organizing code using classes and objects.</p>
+    <code>
+    &lt;?php
+    class Person {
+        public $name;
+        public $age;
+
+        public function __construct($name, $age) {
+            $this->name = $name;
+            $this->age = $age;
+        }
+
+        public function greet() {
+            return "Hello, I am $this->name.";
+        }
+    }
+
+    $person = new Person("John", 25);
+    echo $person->greet();
+    ?&gt;
+    </code>
+
+    <p>12. <strong>Namespaces</strong> - Prevent naming conflicts in large applications.</p>
+    <code>
+    &lt;?php
+    namespace MyApp\Models;
+    class User {
+        // Code for User class
+    }
+    ?&gt;
+    </code>
+
+    <!-- Expert Section -->
+    <h3>Expert</h3>
+    <p>1. <strong>PDO (PHP Data Objects)</strong> - Secure database connections.</p>
+    <code>
+    &lt;?php
+    $pdo = new PDO("mysql:host=localhost;dbname=test", "root", "");
+    $stmt = $pdo->query("SELECT * FROM users");
+    while ($row = $stmt->fetch()) {
+        echo $row["name"];
+    }
+    ?&gt;
+    </code>
+
+    <p>2. <strong>Prepared Statements</strong> - Secure way of executing queries.</p>
+    <code>
+    &lt;?php
+    $stmt = $pdo->prepare("INSERT INTO users (name, age) VALUES (?, ?)");
+    $stmt->execute(["John", 25]);
+    ?&gt;
+    </code>
+
+    <p>3. <strong>Traits</strong> - Reusable methods across multiple classes.</p>
+    <code>
+    &lt;?php
+    trait Logger {
+        public function log($message) {
+            echo $message;
+        }
+    }
+
+    class User {
+        use Logger;
+    }
+    ?&gt;
+    </code>
+
+    <p>4. <strong>Exceptions</strong> - Handle errors with custom error messages.</p>
+    <code>
+    &lt;?php
+    try {
+        throw new Exception("Something went wrong!");
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
+    ?&gt;
+    </code>
+
+    <p>5. <strong>Custom Exception Handling</strong> - Extend built-in exceptions.</p>
+    <code>
+    &lt;?php
+    class MyException extends Exception {}
+    try {
+        throw new MyException("Custom Exception!");
+    } catch (MyException $e) {
+        echo $e->getMessage();
+    }
+    ?&gt;
+    </code>
+
+    <p>6. <strong>Generators</strong> - Create iterators without storing everything in memory.</p>
+    <code>
+    &lt;?php
+    function myGenerator() {
+        yield 1;
+        yield 2;
+        yield 3;
+    }
+    foreach (myGenerator() as $value) {
+        echo $value;
+    }
+    ?&gt;
+    </code>
+
+    <p>7. <strong>Magic Methods</strong> - Special methods that are automatically called.</p>
+    <code>
+    &lt;?php
+    class Person {
+        public $name;
+
+        public function __get($property) {
+            return "Property $property is not defined.";
+        }
+    }
+
+    $person = new Person();
+    echo $person->name;
+    ?&gt;
+    </code>
+
+    <p>8. <strong>Abstract Classes</strong> - Define common structure for child classes.</p>
+    <code>
+    &lt;?php
+    abstract class Animal {
+        abstract public function sound();
+    }
+
+    class Dog extends Animal {
+        public function sound() {
+            echo "Bark";
+        }
+    }
+
+    $dog = new Dog();
+    $dog->sound();
+    ?&gt;
+    </code>
+
+    <p>9. <strong>Final Keyword</strong> - Prevent overriding methods or classes.</p>
+    <code>
+    &lt;?php
+    final class MyClass {}
+    ?&gt;
+    </code>
+
+    <p>10. <strong>Dependency Injection</strong> - Pass objects to other objects.</p>
+    <code>
+    &lt;?php
+    class Database {
+        private $pdo;
+        public function __construct(PDO $pdo) {
+            $this->pdo = $pdo;
+        }
+    }
+
+    $db = new Database($pdo);
+    ?&gt;
+    </code>
+
+    <p>11. <strong>Reflection</strong> - Inspect classes, methods, and properties.</p>
+    <code>
+    &lt;?php
+    $reflection = new ReflectionClass('MyClass');
+    echo $reflection->getName();
+    ?&gt;
+    </code>
+
+    <p>12. <strong>Performance Optimization</strong> - Caching, optimizing database queries, etc.</p>
+    <code>
+    &lt;?php
+    // Use OPcache for bytecode caching
+    // Cache expensive queries or data to reduce load times
+    ?&gt;
+    </code>
+
+    <h2>Compilers and Tools</h2>
+    <ul>
+        <li>XAMPP</li>
+        <li>WAMP</li>
+        <li>PHPStorm</li>
+        <li>Composer</li>
+        <li>Laravel</li>
+        <li>PHPUnit</li>
+        <li>OPcache</li>
+        <li>Redis</li>
+    </ul>
+</main>
+    <footer>
+        <p>Created by Bryson Harvey | Instagram: <a href="https://instagram.com/freeorikyx">@freeorikyx</a> | Facebook: <a href="https://facebook.com/BrysonHarvey">Bryson Harvey</a> | Email: <a href="mailto:b21227127@gmail.com">b21227127@gmail.com</a></p>
+    </footer>
+</body>
+</html>
