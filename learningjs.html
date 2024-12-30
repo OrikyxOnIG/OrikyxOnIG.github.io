@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning JavaScript</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, black, gold);
+            color: white;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        header h1 {
+            margin: 0;
+        }
+        header a {
+            text-decoration: none;
+            color: gold;
+            font-weight: bold;
+        }
+        main {
+            padding: 2em;
+        }
+        main h2, main h3 {
+            color: gold;
+        }
+        code {
+            display: block;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: lightgreen;
+            padding: 1em;
+            margin: 1em 0;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: monospace;
+        }
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Learning JavaScript</h1>
+        <a href="index.html">Home</a>
+    </header>
+
+  <main>
+
+    <h2>What is JavaScript?</h2>
+    <p>
+        JavaScript is a versatile, high-level programming language primarily used for creating dynamic and interactive content on websites. It allows developers to implement complex features such as interactive forms, animations, and dynamic content updates. 
+        JavaScript can be used on the client side and server side, and it integrates seamlessly with HTML and CSS to build responsive, engaging web applications.
+    </p>
+
+    <h2>JavaScript Learning Guide</h2>
+
+    <!-- Basic Section -->
+    <h3>Basic</h3>
+    <p>1. <strong>Variables</strong> - Storing values using <code>var</code>, <code>let</code>, or <code>const</code>.</p>
+    <code>
+    // Variable declaration
+    var x = 10; 
+    let y = 20; 
+    const z = 30; 
+    </code>
+
+    <p>2. <strong>Data Types</strong> - Common types include strings, numbers, booleans, and objects.</p>
+    <code>
+    let name = "John"; // String
+    let age = 25; // Number
+    let isAdmin = true; // Boolean
+    let user = { name: "John", age: 25 }; // Object
+    </code>
+
+    <p>3. <strong>Functions</strong> - Reusable blocks of code.</p>
+    <code>
+    function greet(name) {
+        return "Hello " + name;
+    }
+    console.log(greet("Alice")); // Outputs: Hello Alice
+    </code>
+
+    <p>4. <strong>Conditional Statements</strong> - Decision-making structures.</p>
+    <code>
+    let age = 18;
+    if (age >= 18) {
+        console.log("You are an adult.");
+    } else {
+        console.log("You are a minor.");
+    }
+    </code>
+
+    <p>5. <strong>Loops</strong> - Repeat code with <code>for</code>, <code>while</code>, or <code>do-while</code>.</p>
+    <code>
+    for (let i = 0; i < 5; i++) {
+        console.log(i); // Outputs: 0, 1, 2, 3, 4
+    }
+    </code>
+
+    <p>6. <strong>Arrays</strong> - Store multiple values in one variable.</p>
+    <code>
+    let fruits = ["apple", "banana", "cherry"];
+    console.log(fruits[0]); // Outputs: apple
+    </code>
+
+    <p>7. <strong>Array Methods</strong> - Manipulate arrays with <code>push</code>, <code>pop</code>, etc.</p>
+    <code>
+    let numbers = [1, 2, 3];
+    numbers.push(4); // Adds 4 to the array
+    console.log(numbers); // Outputs: [1, 2, 3, 4]
+    </code>
+
+    <p>8. <strong>String Methods</strong> - Work with strings using <code>length</code>, <code>toUpperCase</code>, etc.</p>
+    <code>
+    let text = "hello world";
+    console.log(text.toUpperCase()); // Outputs: HELLO WORLD
+    console.log(text.length); // Outputs: 11
+    </code>
+
+    <p>9. <strong>Template Literals</strong> - Use backticks for dynamic strings.</p>
+    <code>
+    let name = "John";
+    console.log(`Hello, ${name}!`); // Outputs: Hello, John!
+    </code>
+
+    <p>10. <strong>Basic DOM Manipulation</strong> - Modify HTML elements.</p>
+    <code>
+    document.getElementById("demo").innerHTML = "Hello, JavaScript!";
+    </code>
+
+    <p>11. <strong>Events</strong> - Respond to user interactions.</p>
+    <code>
+    document.getElementById("btn").addEventListener("click", function() {
+        alert("Button clicked!");
+    });
+    </code>
+
+    <p>12. <strong>Comments</strong> - Add comments to your code.</p>
+    <code>
+    // This is a single-line comment
+    /* This is a multi-line comment */
+    </code>
+
+    <p>13. <strong>Console</strong> - Debug code with <code>console.log</code>.</p>
+    <code>
+    console.log("Debugging info here.");
+    </code>
+
+    <p>14. <strong>Type Checking</strong> - Verify variable types.</p>
+    <code>
+    console.log(typeof 42); // Outputs: number
+    console.log(typeof "Hello"); // Outputs: string
+    </code>
+
+<h3>Beginner</h3>
+<p>1. <strong>Let and Const</strong> - Block-scoped variables.</p>
+<code>
+let score = 10; // Mutable
+const PI = 3.14; // Immutable
+</code>
+
+<p>2. <strong>Functions with Parameters</strong> - Pass arguments to functions.</p>
+<code>
+function multiply(a, b) {
+    return a * b;
+}
+console.log(multiply(5, 4)); // Outputs: 20
+</code>
+
+<p>3. <strong>Arrow Functions</strong> - Concise syntax for functions.</p>
+<code>
+const add = (a, b) => a + b;
+console.log(add(3, 7)); // Outputs: 10
+</code>
+
+<p>4. <strong>Objects</strong> - Store key-value pairs.</p>
+<code>
+let car = { brand: "Toyota", model: "Corolla" };
+console.log(car.brand); // Outputs: Toyota
+</code>
+
+<p>5. <strong>Object Destructuring</strong> - Extract properties from objects.</p>
+<code>
+const { brand, model } = car;
+console.log(brand); // Outputs: Toyota
+</code>
+
+<p>6. <strong>Spread Operator</strong> - Expand arrays or objects.</p>
+<code>
+let numbers = [1, 2, 3];
+let moreNumbers = [...numbers, 4, 5];
+console.log(moreNumbers); // Outputs: [1, 2, 3, 4, 5]
+</code>
+
+<p>7. <strong>Template Literals with Loops</strong> - Generate dynamic HTML.</p>
+<code>
+let items = ["apple", "banana"];
+items.forEach(item => console.log(`Item: ${item}`));
+</code>
+
+<p>8. <strong>Event Listeners</strong> - React to DOM events.</p>
+<code>
+document.querySelector("button").addEventListener("click", () => {
+    console.log("Button Clicked");
+});
+</code>
+
+<p>9. <strong>Basic Form Validation</strong> - Check user input.</p>
+<code>
+const input = document.querySelector("input");
+if (input.value === "") {
+    alert("Input cannot be empty");
+}
+</code>
+
+<p>10. <strong>Default Parameters</strong> - Set defaults for function arguments.</p>
+<code>
+function greet(name = "Guest") {
+    console.log(`Hello, ${name}`);
+}
+greet(); // Outputs: Hello, Guest
+</code>
+
+---
+
+### **Intermediate**
+
+```html
+<h3>Intermediate</h3>
+<p>1. <strong>Promises</strong> - Handle asynchronous tasks.</p>
+<code>
+const promise = new Promise((resolve, reject) => {
+    resolve("Success");
+});
+promise.then(result => console.log(result));
+</code>
+
+<p>2. <strong>Async/Await</strong> - Simplified promise handling.</p>
+<code>
+async function fetchData() {
+    const data = await fetch("https://api.example.com");
+    console.log(data);
+}
+fetchData();
+</code>
+
+<p>3. <strong>Modules</strong> - Use <code>export</code> and <code>import</code>.</p>
+<code>
+// File: math.js
+export const add = (a, b) => a + b;
+
+// File: main.js
+import { add } from './math.js';
+console.log(add(2, 3)); // Outputs: 5
+</code>
+
+<p>4. <strong>Classes</strong> - Create objects with shared behavior.</p>
+<code>
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+    speak() {
+        console.log(`${this.name} makes a sound.`);
+    }
+}
+let dog = new Animal("Dog");
+dog.speak();
+</code>
+
+<p>5. <strong>Inheritance</strong> - Extend classes.</p>
+<code>
+class Dog extends Animal {
+    bark() {
+        console.log("Woof!");
+    }
+}
+let myDog = new Dog("Buddy");
+myDog.bark();
+</code>
+
+<p>6. <strong>Error Handling</strong> - Use <code>try...catch</code>.</p>
+<code>
+try {
+    let result = x / 0;
+} catch (error) {
+    console.error("An error occurred:", error.message);
+}
+</code>
+
+<p>7. <strong>Fetching APIs</strong> - Use Fetch API to get data.</p>
+<code>
+fetch("https://api.example.com")
+    .then(response => response.json())
+    .then(data => console.log(data));
+</code>
+
+<p>8. <strong>Local Storage</strong> - Store data in the browser.</p>
+<code>
+localStorage.setItem("name", "John");
+console.log(localStorage.getItem("name"));
+</code>
+
+<p>9. <strong>Session Storage</strong> - Temporary storage.</p>
+<code>
+sessionStorage.setItem("session", "active");
+console.log(sessionStorage.getItem("session"));
+</code>
+
+<p>10. <strong>Timers</strong> - Delay tasks with <code>setTimeout</code> and <code>setInterval</code>.</p>
+<code>
+setTimeout(() => console.log("This runs after 2 seconds"), 2000);
+setInterval(() => console.log("Repeating every 1 second"), 1000);
+</code>
+
+<h3>Advanced</h3>
+
+<p>1. <strong>Closures</strong> - Functions with access to their outer scope.</p>
+<code>
+function outer() {
+    let count = 0;
+    return function inner() {
+        count++;
+        console.log(count);
+    };
+}
+const counter = outer();
+counter(); // Outputs: 1
+counter(); // Outputs: 2
+</code>
+
+<p>2. <strong>Currying</strong> - Transforming functions to take arguments one at a time.</p>
+<code>
+function add(a) {
+    return function(b) {
+        return a + b;
+    };
+}
+console.log(add(5)(3)); // Outputs: 8
+</code>
+
+<p>3. <strong>Higher-Order Functions</strong> - Functions that take or return other functions.</p>
+<code>
+function higherOrder(fn) {
+    return function(x) {
+        return fn(x);
+    };
+}
+const double = higherOrder(x => x * 2);
+console.log(double(4)); // Outputs: 8
+</code>
+
+<p>4. <strong>Debouncing</strong> - Limit the rate of a function execution.</p>
+<code>
+function debounce(fn, delay) {
+    let timer;
+    return function(...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn(...args), delay);
+    };
+}
+</code>
+
+<p>5. <strong>Throttling</strong> - Control function execution at regular intervals.</p>
+<code>
+function throttle(fn, limit) {
+    let inThrottle;
+    return function(...args) {
+        if (!inThrottle) {
+            fn(...args);
+            inThrottle = true;
+            setTimeout(() => (inThrottle = false), limit);
+        }
+    };
+}
+</code>
+
+<p>6. <strong>Event Delegation</strong> - Attach events to a parent element.</p>
+<code>
+document.querySelector("#parent").addEventListener("click", (e) => {
+    if (e.target && e.target.tagName === "BUTTON") {
+        console.log("Button clicked!");
+    }
+});
+</code>
+
+<p>7. <strong>Modules with Dynamic Imports</strong> - Import modules on demand.</p>
+<code>
+import("./module.js").then((module) => {
+    module.someFunction();
+});
+</code>
+
+<p>8. <strong>WeakMap and WeakSet</strong> - Collections for garbage collection.</p>
+<code>
+let weakMap = new WeakMap();
+let obj = {};
+weakMap.set(obj, "value");
+console.log(weakMap.get(obj)); // Outputs: value
+</code>
+
+<p>9. <strong>Symbol</strong> - Unique, immutable values.</p>
+<code>
+let sym1 = Symbol("id");
+let sym2 = Symbol("id");
+console.log(sym1 === sym2); // Outputs: false
+</code>
+
+<p>10. <strong>Prototypes</strong> - Use prototypes for inheritance.</p>
+<code>
+function Person(name) {
+    this.name = name;
+}
+Person.prototype.greet = function() {
+    console.log(`Hello, ${this.name}`);
+};
+const john = new Person("John");
+john.greet(); // Outputs: Hello, John
+</code>
+
+<p>11. <strong>Custom Iterators</strong> - Create custom iterable objects.</p>
+<code>
+const myIterable = {
+    *[Symbol.iterator]() {
+        yield 1;
+        yield 2;
+        yield 3;
+    },
+};
+console.log([...myIterable]); // Outputs: [1, 2, 3]
+</code>
+
+<p>12. <strong>Generator Functions</strong> - Create iterable sequences.</p>
+<code>
+function* generator() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+const gen = generator();
+console.log(gen.next().value); // Outputs: 1
+</code>
+
+<p>13. <strong>Async Generators</strong> - Handle asynchronous iteration.</p>
+<code>
+async function* asyncGenerator() {
+    yield Promise.resolve(1);
+    yield Promise.resolve(2);
+}
+(async () => {
+    for await (let value of asyncGenerator()) {
+        console.log(value); // Outputs: 1, 2
+    }
+})();
+</code>
+
+<p>14. <strong>Proxy</strong> - Intercept object operations.</p>
+<code>
+const handler = {
+    get: (target, prop) => {
+        return prop in target ? target[prop] : "Property does not exist";
+    },
+};
+const obj = new Proxy({ name: "John" }, handler);
+console.log(obj.name); // Outputs: John
+console.log(obj.age); // Outputs: Property does not exist
+</code>
+
+<h3>Expert</h3>
+
+<p>1. <strong>Memoization</strong> - Optimize functions by caching results.</p>
+<code>
+function memoize(fn) {
+    const cache = {};
+    return function (...args) {
+        const key = JSON.stringify(args);
+        if (!cache[key]) {
+            cache[key] = fn(...args);
+        }
+        return cache[key];
+    };
+}
+const add = memoize((a, b) => a + b);
+console.log(add(2, 3)); // Outputs: 5
+console.log(add(2, 3)); // Cached: 5
+</code>
+
+<p>2. <strong>Dynamic Function Creation</strong> - Use the Function constructor.</p>
+<code>
+const dynamicFunc = new Function('a', 'b', 'return a + b;');
+console.log(dynamicFunc(5, 3)); // Outputs: 8
+</code>
+
+<p>3. <strong>Dynamic Imports</strong> - Import modules dynamically.</p>
+<code>
+(async () => {
+    const module = await import('./module.js');
+    module.someFunction();
+})();
+</code>
+
+<p>4. <strong>Module Pattern</strong> - Encapsulation using closures.</p>
+<code>
+const Module = (function () {
+    let privateVar = "I am private";
+    return {
+        getPrivate: function () {
+            return privateVar;
+        },
+    };
+})();
+console.log(Module.getPrivate()); // Outputs: I am private
+</code>
+
+<p>5. <strong>Event Loop</strong> - Understanding async behavior.</p>
+<code>
+console.log("Start");
+setTimeout(() => console.log("Middle"), 0);
+console.log("End");
+// Outputs: Start, End, Middle
+</code>
+
+<p>6. <strong>Memory Management</strong> - Avoid memory leaks using weak references.</p>
+<code>
+let weakRef = new WeakMap();
+let obj = {};
+weakRef.set(obj, "value");
+console.log(weakRef.get(obj)); // Outputs: value
+</code>
+
+<p>7. <strong>Advanced Promises</strong> - Handle multiple promises with Promise.allSettled.</p>
+<code>
+const promises = [
+    Promise.resolve(10),
+    Promise.reject("Error"),
+    Promise.resolve(20),
+];
+Promise.allSettled(promises).then((results) => console.log(results));
+</code>
+
+<p>8. <strong>Advanced Regular Expressions</strong> - Use named capture groups.</p>
+<code>
+const regex = /(?<year>\\d{4})-(?<month>\\d{2})-(?<day>\\d{2})/;
+const match = regex.exec("2024-12-30");
+console.log(match.groups); // Outputs: { year: "2024", month: "12", day: "30" }
+</code>
+
+<p>9. <strong>Design Patterns</strong> - Implement Singleton Pattern.</p>
+<code>
+const Singleton = (function () {
+    let instance;
+    function createInstance() {
+        return { id: Math.random() };
+    }
+    return {
+        getInstance: function () {
+            if (!instance) {
+                instance = createInstance();
+            }
+            return instance;
+        },
+    };
+})();
+const instance1 = Singleton.getInstance();
+const instance2 = Singleton.getInstance();
+console.log(instance1 === instance2); // Outputs: true
+</code>
+
+<p>10. <strong>Advanced Debugging</strong> - Use debugger statements effectively.</p>
+<code>
+function debugExample() {
+    debugger; // Execution pauses here
+    let x = 10;
+    return x * 2;
+}
+debugExample();
+</code>
+
+<p>11. <strong>Proxy with Reflect API</strong> - Intercept and handle object operations.</p>
+<code>
+const handler = {
+    get(target, prop) {
+        return Reflect.get(target, prop) || "Not Found";
+    },
+};
+const proxy = new Proxy({ a: 1 }, handler);
+console.log(proxy.a); // Outputs: 1
+console.log(proxy.b); // Outputs: Not Found
+</code>
+
+<p>12. <strong>Advanced Iterables</strong> - Customize iterables with the Symbol.iterator.</p>
+<code>
+const advancedIterable = {
+    items: ["a", "b", "c"],
+    [Symbol.iterator]: function* () {
+        for (const item of this.items) {
+            yield item.toUpperCase();
+        }
+    },
+};
+console.log([...advancedIterable]); // Outputs: ["A", "B", "C"]
+</code>
+
+<p>13. <strong>Web Workers</strong> - Run scripts in background threads.</p>
+<code>
+// worker.js
+onmessage = function (e) {
+    postMessage(e.data * 2);
+};
+
+// main.js
+const worker = new Worker("worker.js");
+worker.postMessage(10);
+worker.onmessage = function (e) {
+    console.log(e.data); // Outputs: 20
+};
+</code>
+
+<p>14. <strong>Intl API</strong> - Format dates, numbers, and currencies.</p>
+<code>
+const formatter = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" });
+console.log(formatter.format(12345.67)); // Outputs: $12,345.67
+</code>
+
+<h3>Master</h3>
+
+<p>1. <strong>Custom Event Emitters</strong> - Create your own event emitters.</p>
+<code>
+class EventEmitter {
+    constructor() {
+        this.events = {};
+    }
+    on(event, listener) {
+        if (!this.events[event]) {
+            this.events[event] = [];
+        }
+        this.events[event].push(listener);
+    }
+    emit(event, ...args) {
+        if (this.events[event]) {
+            this.events[event].forEach(listener => listener(...args));
+        }
+    }
+}
+const emitter = new EventEmitter();
+emitter.on("data", (msg) => console.log(msg));
+emitter.emit("data", "Hello, Event!"); // Outputs: Hello, Event!
+</code>
+
+<p>2. <strong>Advanced Async Patterns</strong> - Implement Async/Await with Error Handling.</p>
+<code>
+async function fetchData(url) {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+fetchData("https://api.example.com/data");
+</code>
+
+<p>3. <strong>Custom Promises</strong> - Implement your own promise library.</p>
+<code>
+class MyPromise {
+    constructor(executor) {
+        this.callbacks = [];
+        this.state = "pending";
+        this.value = null;
+
+        const resolve = (value) => {
+            this.state = "fulfilled";
+            this.value = value;
+            this.callbacks.forEach(cb => cb(value));
+        };
+
+        executor(resolve);
+    }
+
+    then(callback) {
+        if (this.state === "fulfilled") {
+            callback(this.value);
+        } else {
+            this.callbacks.push(callback);
+        }
+    }
+}
+const promise = new MyPromise(resolve => {
+    setTimeout(() => resolve("Done!"), 1000);
+});
+promise.then(console.log); // Outputs: Done!
+</code>
+
+<p>4. <strong>Service Workers</strong> - Enable offline capabilities for web apps.</p>
+<code>
+// service-worker.js
+self.addEventListener("install", (event) => {
+    event.waitUntil(
+        caches.open("v1").then(cache => cache.addAll(["/", "/index.html"]))
+    );
+});
+self.addEventListener("fetch", (event) => {
+    event.respondWith(
+        caches.match(event.request).then(response => response || fetch(event.request))
+    );
+});
+</code>
+
+<p>5. <strong>Custom Iterable Classes</strong> - Create your own iterable objects.</p>
+<code>
+class Fibonacci {
+    constructor(limit) {
+        this.limit = limit;
+    }
+    [Symbol.iterator]() {
+        let a = 0, b = 1, i = 0;
+        return {
+            next: () => {
+                if (i++ < this.limit) {
+                    const temp = a;
+                    a = b;
+                    b = temp + b;
+                    return { value: temp, done: false };
+                }
+                return { done: true };
+            },
+        };
+    }
+}
+for (const num of new Fibonacci(5)) {
+    console.log(num); // Outputs: 0, 1, 1, 2, 3
+}
+</code>
+
+<p>6. <strong>Advanced Proxies</strong> - Trap multiple operations.</p>
+<code>
+const handler = {
+    get: (target, prop) => (prop in target ? target[prop] : "Property does not exist"),
+    set: (target, prop, value) => {
+        console.log(`Setting ${prop} to ${value}`);
+        target[prop] = value;
+        return true;
+    },
+};
+const obj = new Proxy({}, handler);
+obj.name = "Bryson"; // Logs: Setting name to Bryson
+console.log(obj.name); // Outputs: Bryson
+console.log(obj.age); // Outputs: Property does not exist
+</code>
+
+<p>7. <strong>Custom Error Classes</strong> - Define custom error types.</p>
+<code>
+class CustomError extends Error {
+    constructor(message) {
+        super(message);
+        this.name = "CustomError";
+    }
+}
+try {
+    throw new CustomError("This is a custom error");
+} catch (error) {
+    console.error(error.name, error.message);
+}
+</code>
+
+<p>8. <strong>Advanced Observables</strong> - Implement reactive programming.</p>
+<code>
+class Observable {
+    constructor(subscribe) {
+        this.subscribe = subscribe;
+    }
+}
+const observable = new Observable(observer => {
+    let i = 0;
+    const interval = setInterval(() => {
+        observer.next(i++);
+        if (i > 3) observer.complete();
+    }, 1000);
+
+    return () => clearInterval(interval);
+});
+observable.subscribe({
+    next: val => console.log(val),
+    complete: () => console.log("Done!"),
+});
+</code>
+
+<p>9. <strong>Advanced Functional Programming</strong> - Compose functions.</p>
+<code>
+const compose = (...fns) => (x) => fns.reduceRight((acc, fn) => fn(acc), x);
+const add = x => x + 2;
+const multiply = x => x * 3;
+const result = compose(multiply, add)(5);
+console.log(result); // Outputs: 21
+</code>
+
+<p>10. <strong>Custom Rendering</strong> - Implement a virtual DOM.</p>
+<code>
+function render(vdom, container) {
+    container.innerHTML = vdom;
+}
+const vdom = "<h1>Hello, Virtual DOM!</h1>";
+render(vdom, document.getElementById("app"));
+</code>
+
+<p>11. <strong>WebAssembly</strong> - Execute compiled languages in JavaScript.</p>
+<code>
+// Importing a WebAssembly binary
+fetch("example.wasm")
+    .then(response => response.arrayBuffer())
+    .then(bytes => WebAssembly.instantiate(bytes))
+    .then(({ instance }) => {
+        console.log(instance.exports.add(2, 3)); // Outputs: 5
+    });
+</code>
+
+<p>12. <strong>AI Integration</strong> - Use APIs to integrate AI capabilities.</p>
+<code>
+const apiKey = "your-api-key";
+fetch("https://api.openai.com/v1/engines/davinci/completions", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`
+    },
+    body: JSON.stringify({
+        prompt: "Write a JavaScript example",
+        max_tokens: 50
+    })
+})
+.then(response => response.json())
+.then(data => console.log(data.choices[0].text));
+</code>
+
+<p>13. <strong>Advanced Security</strong> - Use Content Security Policy (CSP).</p>
+<code>
+Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-abc123';
+</code>
+
+<p>14. <strong>Advanced Data Structures</strong> - Work with Map and WeakMap.</p>
+<code>
+const map = new Map();
+map.set("key", "value");
+console.log(map.get("key")); // Outputs: value
+
+const weakMap = new WeakMap();
+const obj = {};
+weakMap.set(obj, "metadata");
+console.log(weakMap.get(obj)); // Outputs: metadata
+</code>
+    <!-- Add other sections like Beginner, Intermediate, Advanced, Expert, and Master here -->
+
+    <h2>Tools and Compilers</h2>
+    <ul>
+        <li>Node.js</li>
+        <li>Browser Developer Tools</li>
+        <li>Visual Studio Code</li>
+        <li>Webpack</li>
+        <li>Babel</li>
+        <li>ESLint</li>
+        <li>Parcel</li>
+        <li>React Developer Tools</li>
+        <li>Angular CLI</li>
+        <li>TypeScript Compiler</li>
+    </ul>
+</main>>
+
+    <footer>
+        <p>Created by Bryson Harvey</p>
+        <p>Instagram: @freeorikyx</p>
+        <p>Facebook: Bryson Harvey</p>
+        <p>Email: b21227127@gmail.com</p>
+    </footer>
+</body>
+</html>
