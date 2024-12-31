@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning XML</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, gold, black);
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: black;
+        }
+        header h1 {
+            margin: 0;
+        }
+        header a {
+            color: gold;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid gold;
+            margin: 10px;
+            display: inline-block;
+        }
+        .content {
+            margin: 20px;
+        }
+        .cheatsheet-section {
+            margin-bottom: 40px;
+        }
+        .cheatsheet-section h2 {
+            text-decoration: underline;
+        }
+        .cheatsheet-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .cheatsheet-section li {
+            margin-bottom: 20px;
+        }
+        .code-box {
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-top: 5px;
+        }
+        footer {
+            background-color: black;
+            color: gold;
+            text-align: center;
+            padding: 10px;
+        }
+        footer a {
+            color: gold;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        footer p {
+            margin: 10px 0;
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Learning XML</h1>
+        <a href="index.html">Home</a>
+    </header>
+
+    <div class="content">
+        <p>XML (eXtensible Markup Language) is a markup language used to store and transport data in a structured, human-readable format. It allows you to define custom tags to represent data, making it easy to separate data from presentation. XML is commonly used in web services, configuration files, and data exchange between applications.</p>
+
+        <!-- Basics Section -->
+        <div class="cheatsheet-section">
+            <h2>Basics</h2>
+            <ul>
+                <li>
+                    <strong>XML Declaration</strong>: Declares the version of XML and the encoding used.
+                    <div class="code-box">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div>
+                </li>
+                <li>
+                    <strong>Root Element</strong>: The root element is the top-level element that encloses all others.
+                    <div class="code-box">&lt;note&gt; &lt;/note&gt;</div>
+                </li>
+                <li>
+                    <strong>Tags</strong>: Tags are used to define elements in XML.
+                    <div class="code-box">&lt;greeting&gt;Hello, World!&lt;/greeting&gt;</div>
+                </li>
+                <li>
+                    <strong>Attributes</strong>: Attributes provide additional information about elements.
+                    <div class="code-box">&lt;book genre="fantasy"&gt;The Hobbit&lt;/book&gt;</div>
+                </li>
+                <li>
+                    <strong>Nested Elements</strong>: Elements can be nested inside other elements.
+                    <div class="code-box">
+&lt;person&gt;<br>
+  &lt;name&gt;John Doe&lt;/name&gt;<br>
+  &lt;age&gt;30&lt;/age&gt;<br>
+&lt;/person&gt;
+                    </div>
+                </li>
+                <li>
+                    <strong>Empty Elements</strong>: Tags that don’t have closing tags can be self-closing.
+                    <div class="code-box">&lt;br /&gt;</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Intermediate Section -->
+        <div class="cheatsheet-section">
+            <h2>Intermediate</h2>
+            <ul>
+                <li>
+                    <strong>CDATA Section</strong>: Used for data that should not be treated as XML.
+                    <div class="code-box">&lt;![CDATA[Some text &lt;not&gt; in XML format]]&gt;</div>
+                </li>
+                <li>
+                    <strong>Entity References</strong>: Shortcuts for commonly used symbols.
+                    <div class="code-box">&lt;!ENTITY copy "©"&gt;</div>
+                </li>
+                <li>
+                    <strong>Namespaces</strong>: Used to avoid element name conflicts in XML documents.
+                    <div class="code-box">&lt;book xmlns="http://www.example.com"&gt;</div>
+                </li>
+                <li>
+                    <strong>Comments</strong>: Comments are added to XML for documentation or explanation.
+                    <div class="code-box">&lt;!-- This is a comment --&gt;</div>
+                </li>
+                <li>
+                    <strong>Processing Instructions</strong>: Used to provide special instructions to an XML processor.
+                    <div class="code-box">&lt;?php echo "Hello, World!" ?&gt;</div>
+                </li>
+                <li>
+                    <strong>XML Schema</strong>: Defines the structure and data types of an XML document.
+                    <div class="code-box">&lt;xs:schema&gt;...&lt;/xs:schema&gt;</div>
+                </li>
+                <li>
+                    <strong>Namespaces in Attributes</strong>: You can define a namespace for attributes as well.
+                    <div class="code-box">&lt;book xmlns:author="http://www.example.com"&gt;</div>
+                </li>
+                <li>
+                    <strong>Entity Substitution</strong>: Replacing content using defined entities.
+                    <div class="code-box">&lt;!ENTITY author "J.K. Rowling"&gt;</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Advanced Section -->
+        <div class="cheatsheet-section">
+            <h2>Advanced</h2>
+            <ul>
+                <li>
+                    <strong>XSLT</strong>: Transform XML into different formats (HTML, plain text, etc.).
+                    <div class="code-box">&lt;xsl:template match="/"/&gt;</div>
+                </li>
+                <li>
+                    <strong>XPath</strong>: Query language to select nodes in an XML document.
+                    <div class="code-box">//book/title</div>
+                </li>
+                <li>
+                    <strong>XPath Functions</strong>: Functions in XPath to refine searches.
+                    <div class="code-box">contains(., 'XML')</div>
+                </li>
+                <li>
+                    <strong>Validating XML</strong>: Ensuring that XML follows the correct structure defined by a schema.
+                    <div class="code-box">&lt;xs:element name="book"&gt;&lt;/xs:element&gt;</div>
+                </li>
+                <li>
+                    <strong>XML Parsers</strong>: Tools to read and write XML documents.
+                    <div class="code-box">import org.xml.sax.*;</div>
+                </li>
+                <li>
+                    <strong>XPath Axis</strong>: XPath axis helps you to navigate through XML nodes.
+                    <div class="code-box">parent::book</div>
+                </li>
+                <li>
+                    <strong>XML Namespaces in XPath</strong>: Handling XML namespaces with XPath.
+                    <div class="code-box">book:title</div>
+                </li>
+                <li>
+                    <strong>Document Object Model (DOM)</strong>: In-memory representation of XML documents.
+                    <div class="code-box">DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Expert Section -->
+        <div class="cheatsheet-section">
+            <h2>Expert</h2>
+            <ul>
+                <li>
+                    <strong>XML Digital Signature</strong>: Security feature for verifying the authenticity of XML data.
+                    <div class="code-box">&lt;ds:Signature&gt;...</div>
+                </li>
+                <li>
+                    <strong>XML Encryption</strong>: Securely encrypting XML data.
+                    <div class="code-box">&lt;xenc:EncryptedData&gt;...</div>
+                </li>
+                <li>
+                    <strong>SOAP</strong>: Protocol for exchanging structured information in web services.
+                    <div class="code-box">&lt;soapenv:Envelope&gt;</div>
+                </li>
+                <li>
+                    <strong>XML Stream Processing</strong>: Efficiently processing large XML files with limited memory.
+                    <div class="code-box">XMLStreamReader reader = factory.createXMLStreamReader(inputStream);</div>
+                </li>
+                <li>
+                    <strong>XML Validation with Schemas</strong>: Validating XML data against an XSD schema.
+                    <div class="code-box">Validator validator = schemaFactory.newSchema(schemaFile);</div>
+                </li>
+                <li>
+                    <strong>XQuery</strong>: Query language for XML databases.
+                    <div class="code-box">for $book in doc("books.xml")//book</div>
+                </li>
+                <li>
+                    <strong>DOM vs SAX Parsing</strong>: Comparing two XML parsing techniques.
+                    <div class="code-box">SAXParser saxParser = factory.newSAXParser();</div>
+                </li>
+                <li>
+                    <strong>XML Signature for Digital Signatures</strong>: Ensuring data integrity and authenticity in XML documents.
+                    <div class="code-box">&lt;ds:SignedInfo&gt;</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Master Section -->
+        <div class="cheatsheet-section">
+            <h2>Master</h2>
+            <ul>
+                <li>
+                    <strong>Custom XML Parsers</strong>: Writing your own XML parser.
+                    <div class="code-box">public class MyXMLParser extends XMLReader</div>
+                </li>
+                <li>
+                    <strong>XML Schema Design Patterns</strong>: Advanced design patterns for creating reusable schemas.
+                    <div class="code-box">&lt;xs:complexType&gt;...&lt;/xs:complexType&gt;</div>
+                </li>
+                <li>
+                    <strong>SOAP Web Services with XML</strong>: Developing and deploying SOAP web services using XML.
+                    <div class="code-box">&lt;wsdl:definitions&gt;</div>
+                </li>
+                <li>
+                    <strong>Optimizing XML Performance</strong>: Techniques to improve XML parsing and processing speed.
+                    <div class="code-box">StAX for streaming XML</div>
+                </li>
+                <li>
+                    <strong>Integrating XML with Other Languages</strong>: Using XML with Python, Java, etc.
+                    <div class="code-box">import xml.etree.ElementTree as ET</div>
+                </li>
+                <li>
+                    <strong>XML Data Transformations</strong>: Transforming XML to different formats (HTML, JSON, etc.).
+                    <div class="code-box">XSLTProcessor.process()</div>
+                </li>
+                <li>
+                    <strong>XML Namespaces in SOAP</strong>: Managing namespaces in SOAP requests and responses.
+                    <div class="code-box">&lt;env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"&gt;</div>
+                </li>
+                <li>
+                    <strong>Optimizing XML Storage</strong>: Using XML databases like eXist-db for scalable storage.
+                    <div class="code-box">db = exist_db.connect()</div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Compilers and Tools -->
+        <div class="cheatsheet-section">
+            <h2>Compilers and Tools</h2>
+            <ul>
+                <li>
+                    <strong>XMLSpy</strong>: A popular XML editor and integrated development environment (IDE).
+                    <div class="code-box">XMLSpy provides a user-friendly interface for XML editing, validation, and debugging.</div>
+                </li>
+                <li>
+                    <strong>Oxygen XML Editor</strong>: Another powerful XML editor for creating, editing, and managing XML files.
+                    <div class="code-box">Oxygen XML supports advanced editing features like auto-completion and validation.</div>
+                </li>
+                <li>
+                    <strong>jXML</strong>: A lightweight XML processing library for Java.
+                    <div class="code-box">jXML enables fast XML parsing and manipulation in Java applications.</div>
+                </li>
+                <li>
+                    <strong>Expat</strong>: A fast, non-validating XML parser library written in C.
+                    <div class="code-box">Expat is widely used for parsing large XML files in C-based applications.</div>
+                </li>
+                <li>
+                    <strong>libxml2</strong>: A library for parsing XML and HTML documents, and validating against schemas.
+                    <div class="code-box">libxml2 supports XPath, XPointer, and Schema validation.</div>
+                </li>
+                <li>
+                    <strong>StAX (Streaming API for XML)</strong>: A Java API for processing XML data in a streaming way.
+                    <div class="code-box">StAX allows you to read and write XML files in a memory-efficient way.</div>
+                </li>
+                <li>
+                    <strong>W3C XML Validator</strong>: An online tool for validating XML documents against W3C standards.
+                    <div class="code-box">This tool helps to check for well-formedness and validity according to the XML specifications.</div>
+                </li>
+                <li>
+                    <strong>XMLLint</strong>: A command-line tool for validating and formatting XML files.
+                    <div class="code-box">XMLLint is a useful tool for both syntax checking and pretty printing XML documents.</div>
+                </li>
+                <li>
+                    <strong>XML4J</strong>: A toolkit for processing XML documents in Java.
+                    <div class="code-box">XML4J is used to read, write, and validate XML documents in Java-based applications.</div>
+                </li>
+                <li>
+                    <strong>XPath Tester</strong>: A tool to test and evaluate XPath expressions.
+                    <div class="code-box">XPath Tester allows you to experiment with XPath queries and see their results in real time.</div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Created by <strong>Bryson Harvey</strong></p>
+        <p>Visit my Discord: <a href="https://discord.gg/ZPXh9xUW8A" target="_blank">Orikyx's Programming Community</a></p>
+        <p>Contact: <a href="b21227127@gmail.com">b21227127@gmail.com</a></p>
+    </footer>
+
+</body>
+</html>
