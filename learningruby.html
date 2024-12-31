@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learning Ruby</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #000000, #FFD700);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .button {
+            background-color: #FFD700;
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .cheatsheet-section {
+            margin-bottom: 30px;
+        }
+
+        .cheatsheet-section h3 {
+            text-decoration: underline;
+        }
+
+        code {
+            display: block;
+            background-color: #333;
+            color: #FFD700;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-size: 1rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #FFD700;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .button {
+                padding: 8px 12px;
+            }
+
+            .content {
+                padding: 10px;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Learning Ruby</h1>
+        <a href="index.html" class="button">Home</a>
+    </header>
+
+    <div class="content">
+        <p>Ruby is a dynamic, open-source programming language with a focus on simplicity and productivity. It was
+            designed with an emphasis on being easy to read and write, using a clean and readable syntax. Ruby is
+            used for web development (primarily with Ruby on Rails), scripting, and various other types of
+            applications.</p>
+
+        <div class="cheatsheet-section">
+            <h3>Basics</h3>
+            <ul>
+                <li>
+                    <strong>Variables</strong> - Declare and use variables.
+                    <code>
+name = "John Doe"
+puts name
+                    </code>
+                </li>
+                <li>
+                    <strong>Data Types</strong> - Strings, Integers, Floats, Arrays, Hashes.
+                    <code>
+number = 42
+string = "Hello, Ruby!"
+array = [1, 2, 3]
+hash = { "name" => "John", "age" => 30 }
+                    </code>
+                </li>
+                <li>
+                    <strong>String Interpolation</strong> - Embed variables in strings.
+                    <code>
+name = "Ruby"
+puts "Hello, #{name}!"
+                    </code>
+                </li>
+                <li>
+                    <strong>Conditionals</strong> - If, else, and elsif statements.
+                    <code>
+age = 18
+if age >= 18
+  puts "You are an adult."
+else
+  puts "You are a minor."
+end
+                    </code>
+                </li>
+                <li>
+                    <strong>Loops</strong> - Iterate over data.
+                    <code>
+for i in 1..5
+  puts i
+end
+                    </code>
+                </li>
+                <li>
+                    <strong>Arrays</strong> - Working with arrays.
+                    <code>
+arr = [1, 2, 3, 4, 5]
+arr.each { |num| puts num }
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <div class="cheatsheet-section">
+            <h3>Intermediate</h3>
+            <ul>
+                <li>
+                    <strong>Methods</strong> - Define and call methods.
+                    <code>
+def greet(name)
+  puts "Hello, #{name}!"
+end
+
+greet("Alice")
+                    </code>
+                </li>
+                <li>
+                    <strong>Blocks</strong> - Use blocks with methods.
+                    <code>
+3.times { puts "Hello!" }
+                    </code>
+                </li>
+                <li>
+                    <strong>Hashes</strong> - Use key-value pairs.
+                    <code>
+person = { "name" => "John", "age" => 30 }
+puts person["name"]
+                    </code>
+                </li>
+                <li>
+                    <strong>Regular Expressions</strong> - Pattern matching in strings.
+                    <code>
+text = "The Ruby programming language is great!"
+if text =~ /Ruby/
+  puts "Match found"
+end
+                    </code>
+                </li>
+                <li>
+                    <strong>Ranges</strong> - Working with ranges.
+                    <code>
+(1..5).each { |i| puts i }
+                    </code>
+                </li>
+                <li>
+                    <strong>File Handling</strong> - Reading and writing to files.
+                    <code>
+File.open("file.txt", "w") { |file| file.puts "Hello, Ruby!" }
+content = File.read("file.txt")
+puts content
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <div class="cheatsheet-section">
+            <h3>Advanced</h3>
+            <ul>
+                <li>
+                    <strong>Object-Oriented Programming (OOP)</strong> - Define classes and objects.
+                    <code>
+class Person
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+
+  def greet
+    puts "Hello, #{@name}!"
+  end
+end
+
+person = Person.new("John", 30)
+person.greet
+                    </code>
+                </li>
+                <li>
+                    <strong>Inheritance</strong> - Creating child classes.
+                    <code>
+class Employee < Person
+  def initialize(name, age, job_title)
+    super(name, age)
+    @job_title = job_title
+  end
+
+  def greet
+    super
+    puts "I am a #{@job_title}."
+  end
+end
+
+employee = Employee.new("Alice", 25, "Developer")
+employee.greet
+                    </code>
+                </li>
+                <li>
+                    <strong>Modules</strong> - Reuse code across multiple classes.
+                    <code>
+module Speak
+  def speak
+    puts "Hello!"
+  end
+end
+
+class Person
+  include Speak
+end
+
+person = Person.new
+person.speak
+                    </code>
+                </li>
+                <li>
+                    <strong>Exception Handling</strong> - Handle errors.
+                    <code>
+begin
+  raise "An error occurred"
+rescue => e
+  puts "Error: #{e.message}"
+end
+                    </code>
+                </li>
+                <li>
+                    <strong>Enumerable Methods</strong> - Working with collections.
+                    <code>
+arr = [1, 2, 3, 4]
+puts arr.map { |n| n * 2 }
+puts arr.select { |n| n.even? }
+                    </code>
+                </li>
+                <li>
+                    <strong>Procs and Lambdas</strong> - Create callable objects.
+                    <code>
+greeting = Proc.new { |name| puts "Hello, #{name}!" }
+greeting.call("Alice")
+
+square = ->(x) { x * x }
+puts square.call(4)
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <div class="cheatsheet-section">
+            <h3>Expert</h3>
+            <ul>
+                <li>
+                    <strong>Metaprogramming</strong> - Write code that writes code.
+                    <code>
+class MyClass
+  define_method(:say_hello) { puts "Hello!" }
+end
+
+obj = MyClass.new
+obj.say_hello
+                    </code>
+                </li>
+                <li>
+                    <strong>Monkey Patching</strong> - Add or modify methods in existing classes.
+                    <code>
+class String
+  def reverse_words
+    self.split.reverse.join(" ")
+  end
+end
+
+puts "Hello World".reverse_words
+                    </code>
+                </li>
+                <li>
+                    <strong>Ruby C Extensions</strong> - Write Ruby extensions in C for performance.
+                    <code>
+# C extension code to speed up Ruby functions
+                    </code>
+                </li>
+                <li>
+                    <strong>Fiber</strong> - Manage lightweight concurrency.
+                    <code>
+fiber = Fiber.new do
+  puts "Fiber started"
+  Fiber.yield
+  puts "Fiber resumed"
+end
+
+fiber.resume
+fiber.resume
+                    </code>
+                </li>
+                <li>
+                    <strong>Custom Iterators</strong> - Create your own iterators.
+                    <code>
+class MyIterator
+  def initialize
+    @index = 0
+  end
+
+  def each
+    yield 1
+    yield 2
+    yield 3
+  end
+end
+
+it = MyIterator.new
+it.each { |item| puts item }
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <div class="cheatsheet-section">
+            <h3>Compilers and Tools for Ruby</h3>
+            <ul>
+                <li>RubyMine - IDE for Ruby development.</li>
+                <li>IRB - Interactive Ruby Shell for testing and exploring Ruby code.</li>
+                <li>RVM - Ruby Version Manager for managing multiple Ruby versions.</li>
+                <li>Rails - Full-stack web application framework written in Ruby.</li>
+                <li>Bundler - A tool for managing Ruby dependencies.</li>
+                <li>Sinatra - Minimalist web framework for Ruby.</li>
+                <li>RSpec - A testing framework for Ruby.</li>
+                <li>JRuby - Ruby on the Java Virtual Machine (JVM).</li>
+                <li>Rubinius - A Ruby implementation focused on performance.</li>
+                <li>Repl.it - An online Ruby IDE and compiler.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created by Bryson Harvey</p>
+        <div class="footer-links">
+            <p>Instagram: <a href="https://www.instagram.com/freeorikyx" target="_blank">@freeorikyx</a></p>
+            <p>Facebook: <a href="https://www.facebook.com/BrysonHarvey" target="_blank">Bryson Harvey</a></p>
+            <p>Email: <a href="mailto:b21227127@gmail.com">b21227127@gmail.com</a></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

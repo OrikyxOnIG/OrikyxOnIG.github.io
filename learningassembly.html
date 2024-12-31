@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learning Assembly</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #000000, #FFD700);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .button {
+            background-color: #FFD700;
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .cheatsheet-section {
+            margin-bottom: 30px;
+        }
+
+        .cheatsheet-section h3 {
+            text-decoration: underline;
+        }
+
+        code {
+            display: block;
+            background-color: #333;
+            color: #FFD700;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-size: 1rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #FFD700;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .button {
+                padding: 8px 12px;
+            }
+
+            .content {
+                padding: 10px;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Learning Assembly</h1>
+        <a href="index.html" class="button">Home</a>
+    </header>
+
+    <div class="content">
+        <p>Assembly is a low-level programming language that is designed for a specific computer architecture. It is often used for system programming and hardware manipulation. Assembly code directly corresponds to machine instructions, which makes it highly efficient but also complex and difficult to write compared to higher-level languages.</p>
+
+        <div class="cheatsheet-section">
+            <h3>Basics</h3>
+            <ul>
+                <li>
+                    <strong>Registers</strong> - Working with CPU registers.
+                    <code>
+MOV AX, 1    ; Load 1 into AX register
+                    </code>
+                </li>
+                <li>
+                    <strong>Memory Access</strong> - Direct memory addressing.
+                    <code>
+MOV [BX], AX    ; Store value of AX in memory address held by BX
+                    </code>
+                </li>
+                <li>
+                    <strong>Arithmetic Operations</strong> - Basic arithmetic in Assembly.
+                    <code>
+ADD AX, BX    ; AX = AX + BX
+SUB AX, BX    ; AX = AX - BX
+                    </code>
+                </li>
+                <li>
+                    <strong>Immediate Values</strong> - Use constants in Assembly.
+                    <code>
+MOV AX, 10    ; Load constant 10 into AX register
+                    </code>
+                </li>
+                <li>
+                    <strong>Conditional Jumps</strong> - Jump based on conditions.
+                    <code>
+JE label    ; Jump if equal
+JNE label   ; Jump if not equal
+                    </code>
+                </li>
+                <li>
+                    <strong>Labels</strong> - Define labels for jumps.
+                    <code>
+start:    ; Label definition
+MOV AX, 5
+JMP start  ; Jump to start label
+                    </code>
+                </li>
+                <li>
+                    <strong>Looping</strong> - Basic loop structure in Assembly.
+                    <code>
+MOV CX, 5    ; Loop 5 times
+loop_start:
+DEC CX
+JNZ loop_start    ; Jump if CX is not zero
+                    </code>
+                </li>
+                <li>
+                    <strong>Stack Operations</strong> - Push and pop operations.
+                    <code>
+PUSH AX    ; Push AX onto the stack
+POP AX     ; Pop value from the stack into AX
+                    </code>
+                </li>
+                <li>
+                    <strong>System Calls</strong> - Making system calls.
+                    <code>
+MOV AH, 4Ch    ; Exit function
+INT 21h        ; Call interrupt 21h to exit program
+                    </code>
+                </li>
+                <li>
+                    <strong>Comments</strong> - Writing comments in Assembly code.
+                    <code>
+; This is a comment in Assembly
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <div class="cheatsheet-section">
+            <h3>Intermediate</h3>
+            <ul>
+                <li>
+                    <strong>Functions</strong> - Creating functions in Assembly.
+                    <code>
+call_function:
+    ; Function code here
+    ret    ; Return from function
+                    </code>
+                </li>
+                <li>
+                    <strong>Data Segment</strong> - Define variables in the data segment.
+                    <code>
+.data
+msg db 'Hello, Assembly!', 0
+                    </code>
+                </li>
+                <li>
+                    <strong>Stack Frame</strong> - Manage stack frames for function calls.
+                    <code>
+push bp
+mov bp, sp
+; Access arguments and local variables
+pop bp
+                    </code>
+                </li>
+                <li>
+                    <strong>Interrupts</strong> - Using hardware interrupts for system calls.
+                    <code>
+MOV AH, 9
+MOV DX, offset msg
+INT 21h        ; Print string using interrupt
+                    </code>
+                </li>
+                <li>
+                    <strong>Multi-byte Operations</strong> - Handling multi-byte numbers.
+                    <code>
+MOV AX, 0x1000
+MOV BX, 0x2000
+ADD AX, BX    ; AX = AX + BX (16-bit addition)
+                    </code>
+                </li>
+                <li>
+                    <strong>String Operations</strong> - Manipulate strings in Assembly.
+                    <code>
+MOV SI, offset msg
+MOV DI, offset result
+MOV CX, 5
+REP MOVSB    ; Copy string using REP prefix
+                    </code>
+                </li>
+                <li>
+                    <strong>System Memory Allocation</strong> - Allocate and manage memory.
+                    <code>
+MOV AH, 48h    ; Allocate memory
+MOV BX, 10     ; Number of bytes
+INT 21h        ; Call interrupt 21h
+                    </code>
+                </li>
+                <li>
+                    <strong>Bitwise Operations</strong> - Bit-level manipulation.
+                    <code>
+AND AX, BX    ; AX = AX AND BX
+OR AX, BX     ; AX = AX OR BX
+                    </code>
+                </li>
+                <li>
+                    <strong>Pointer Arithmetic</strong> - Work with pointers in Assembly.
+                    <code>
+LEA SI, [BX + 4]    ; Load address of BX + 4 into SI
+                    </code>
+                </li>
+                <li>
+                    <strong>Flag Register</strong> - Modify processor flags.
+                    <code>
+CLC    ; Clear carry flag
+STC    ; Set carry flag
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <div class="cheatsheet-section">
+            <h3>Advanced</h3>
+            <ul>
+                <li>
+                    <strong>Calling Conventions</strong> - Understanding function calls and parameter passing.
+                    <code>
+; Push arguments in reverse order for stack-based calling conventions
+                    </code>
+                </li>
+                <li>
+                    <strong>Position-independent Code (PIC)</strong> - Write code independent of its address.
+                    <code>
+MOV EAX, [EBX]
+                    </code>
+                </li>
+                <li>
+                    <strong>Exception Handling</strong> - Handle exceptions in low-level Assembly.
+                    <code>
+MOV AX, 0x00    ; Clear error flags
+                    </code>
+                </li>
+                <li>
+                    <strong>Macros</strong> - Define reusable code snippets.
+                    <code>
+%macro PRINT 1
+MOV DX, %1
+MOV AH, 9
+INT 21h
+%endmacro
+                    </code>
+                </li>
+                <li>
+                    <strong>Direct Memory Access (DMA)</strong> - Access memory directly.
+                    <code>
+MOV AX, 0x1000
+MOV ES, AX
+                    </code>
+                </li>
+                <li>
+                    <strong>Memory Mapped I/O</strong> - Access hardware through memory addresses.
+                    <code>
+MOV AX, 0x3000    ; Memory-mapped I/O address
+                    </code>
+                </li>
+                <li>
+                    <strong>Accessing BIOS Services</strong> - Use BIOS functions via interrupts.
+                    <code>
+MOV AH, 0x0E
+MOV AL, 'A'
+INT 10h        ; BIOS function to display character
+                    </code>
+                </li>
+                <li>
+                    <strong>Advanced Loops</strong> - Create advanced loop structures.
+                    <code>
+MOV CX, 100
+.loop:
+DEC CX
+JNZ .loop
+                    </code>
+                </li>
+                <li>
+                    <strong>Optimization Techniques</strong> - Optimize Assembly code.
+                    <code>
+; Use registers as much as possible
+                    </code>
+                </li>
+                <li>
+                    <strong>Compiler Directives</strong> - Use specific directives for optimization.
+                    <code>
+%include 'macros.asm'
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <div class="cheatsheet-section">
+            <h3>Master</h3>
+            <ul>
+                <li>
+                    <strong>Kernel-Level Programming</strong> - Write Assembly code for kernel operations.
+                    <code>
+; Write system calls and handle interrupts directly
+                    </code>
+                </li>
+                <li>
+                    <strong>Inline Assembly in C</strong> - Combine Assembly with C for performance.
+                    <code>
+asm("MOV AX, 1");
+                    </code>
+                </li>
+                <li>
+                    <strong>Memory Management at the System Level</strong> - Handle memory allocation at the system level.
+                    <code>
+MOV EAX, 0x0800    ; Allocate memory block of size 0x0800 bytes
+MOV EBX, 0x0400    ; Memory address for use
+                    </code>
+                </li>
+                <li>
+                    <strong>Accessing Hardware Directly</strong> - Interface with hardware directly using Assembly.
+                    <code>
+MOV DX, 0x60    ; Hardware port for keyboard input
+IN AL, DX       ; Read from the hardware port into AL register
+                    </code>
+                </li>
+                <li>
+                    <strong>Real-Time Systems Programming</strong> - Develop real-time applications in Assembly.
+                    <code>
+MOV CX, 10     ; Real-time task counter
+LOOP_REALTIME:
+DEC CX
+JNZ LOOP_REALTIME
+                    </code>
+                </li>
+                <li>
+                    <strong>Implementing Virtual Memory</strong> - Write code to implement virtual memory in Assembly.
+                    <code>
+MOV CR3, PAGE_TABLE_ADDR    ; Load the page table address into CR3
+                    </code>
+                </li>
+                <li>
+                    <strong>Advanced Interrupt Handling</strong> - Manage custom interrupts in Assembly.
+                    <code>
+MOV AH, 0x25    ; Set interrupt vector
+MOV AL, 0xFF    ; Interrupt number
+MOV DX, handler ; Address of the interrupt handler
+INT 21h         ; Set up interrupt
+                    </code>
+                </li>
+                <li>
+                    <strong>Disassembling Code</strong> - Use Assembly to disassemble machine code.
+                    <code>
+MOV AX, 0x5A00    ; Instruction to disassemble
+                    </code>
+                </li>
+                <li>
+                    <strong>Creating Bootloaders</strong> - Write Assembly code for creating bootloaders.
+                    <code>
+MOV AX, 0x7C00    ; Load bootloader address
+MOV DS, AX        ; Set data segment to bootloader
+                    </code>
+                </li>
+                <li>
+                    <strong>Advanced SIMD Operations</strong> - Implement SIMD (Single Instruction, Multiple Data) operations in Assembly.
+                    <code>
+MOVAPS XMM0, [memory]    ; Load data into XMM0 register
+                    </code>
+                </li>
+                <li>
+                    <strong>Optimizing Assembly for Multi-core Systems</strong> - Writing parallel code in Assembly for multi-core processors.
+                    <code>
+MOV EAX, 0x01     ; Processor core initialization
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <div class="cheatsheet-section">
+            <h3>Compilers and Tools for Assembly</h3>
+            <ul>
+                <li><strong>MASM (Microsoft Macro Assembler)</strong> - A widely used assembler for Windows applications.</li>
+                <li><strong>NASM (Netwide Assembler)</strong> - A popular assembler for Linux and Windows.</li>
+                <li><strong>GAS (GNU Assembler)</strong> - Part of the GNU toolchain, commonly used on Unix-like systems.</li>
+                <li><strong>FASM (Flat Assembler)</strong> - An open-source assembler that produces very efficient code.</li>
+                <li><strong>TASM (Turbo Assembler)</strong> - An assembler used primarily for DOS-based programming.</li>
+                <li><strong>YASM</strong> - A highly flexible and easy-to-use assembler for multiple platforms.</li>
+                <li><strong>GDB (GNU Debugger)</strong> - A debugger that supports debugging Assembly programs.</li>
+                <li><strong>Emu8086</strong> - An emulator for learning and testing Assembly code for 8086 microprocessors.</li>
+                <li><strong>Bochs</strong> - An emulator used to emulate x86 systems, including Assembly programming.</li>
+                <li><strong>RadASM</strong> - A powerful IDE for developing Assembly code.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Bryson Harvey | <a href="https://www.instagram.com/freeorikyx" target="_blank">@freeorikyx</a> | <a href="https://www.facebook.com/BrysonHarvey" target="_blank">Bryson Harvey</a> | <a href="mailto:b21227127@gmail.com">b21227127@gmail.com</a></p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Kotlin</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, black, gold);
+      color: white;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background: black;
+      color: gold;
+    }
+    header a {
+      text-decoration: none;
+      color: gold;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    pre {
+  background: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  white-space: pre-wrap; /* Ensures code wraps to fit the box */
+  word-wrap: break-word; /* Breaks long words if necessary */
+}
+    section {
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      color: gold;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 15px;
+    }
+    pre {
+      background: #333;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: black;
+      color: gold;
+    }
+    @media screen and (max-width: 768px) {
+      body {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Learning Kotlin</h1>
+    <a href="index.html">Home</a>
+  </header>
+
+  <!-- Introduction Section -->
+  <section>
+    <h2>What is Kotlin?</h2>
+    <p>
+      Kotlin is a modern, statically typed programming language that is used for Android development, server-side development, and more. It is concise, expressive, and interoperable with Java, making it a popular choice for developers. Kotlin is designed to improve developer productivity and enhance code safety.
+    </p>
+    <p>
+      Kotlin can be used for various applications including Android apps, backend systems, and multiplatform development. With its rich feature set and powerful tools, Kotlin has become a preferred choice for many developers.
+    </p>
+  </section>
+
+  <!-- Cheatsheet Section -->
+  <section>
+    <h2>Full Stack Cheatsheet</h2>
+
+    <!-- Basic -->
+    <h3>Basic</h3>
+<ul>
+  <li>Printing to Console
+    <pre><code>fun main() {
+  println("Hello, World!")
+}</code></pre>
+  </li>
+  <li>Declaring Variables
+    <pre><code>fun main() {
+  val name = "Kotlin"
+  var age = 10
+  println("Name: $name, Age: $age")
+}</code></pre>
+  </li>
+  <li>Data Types
+    <pre><code>fun main() {
+  val intVal: Int = 42
+  val doubleVal: Double = 3.14
+  val stringVal: String = "Kotlin"
+  println("$intVal, $doubleVal, $stringVal")
+}</code></pre>
+  </li>
+  <li>Basic Input
+    <pre><code>fun main() {
+  print("Enter your name: ")
+  val name = readLine()
+  println("Hello, $name!")
+}</code></pre>
+  </li>
+  <li>If-Else Statement
+    <pre><code>fun main() {
+  val number = 5
+  if (number % 2 == 0) {
+    println("$number is even")
+  } else {
+    println("$number is odd")
+  }
+}</code></pre>
+  </li>
+  <li>When Expression
+    <pre><code>fun main() {
+  val number = 3
+  when (number) {
+    1 -> println("One")
+    2 -> println("Two")
+    3 -> println("Three")
+    else -> println("Unknown number")
+  }
+}</code></pre>
+  </li>
+  <li>For Loop
+    <pre><code>fun main() {
+  for (i in 1..5) {
+    println("Count: $i")
+  }
+}</code></pre>
+  </li>
+  <li>While Loop
+    <pre><code>fun main() {
+  var counter = 1
+  while (counter <= 5) {
+    println("Counter: $counter")
+    counter++
+  }
+}</code></pre>
+  </li>
+  <li>Do-While Loop
+    <pre><code>fun main() {
+  var counter = 1
+  do {
+    println("Counter: $counter")
+    counter++
+  } while (counter <= 5)
+}</code></pre>
+  </li>
+  <li>Null Safety
+    <pre><code>fun main() {
+  val name: String? = null
+  println(name?.length ?: "Name is null")
+}</code></pre>
+  </li>
+</ul>
+
+    <!-- Beginner -->
+   <h3>Beginner</h3>
+<ul>
+  <li>Functions
+    <pre><code>fun greet(name: String) {
+  println("Hello, $name!")
+}
+
+fun main() {
+  greet("Kotlin")
+}</code></pre>
+  </li>
+  <li>Default Parameters
+    <pre><code>fun greet(name: String = "World") {
+  println("Hello, $name!")
+}
+
+fun main() {
+  greet()
+  greet("Kotlin")
+}</code></pre>
+  </li>
+  <li>Named Arguments
+    <pre><code>fun printDetails(name: String, age: Int) {
+  println("Name: $name, Age: $age")
+}
+
+fun main() {
+  printDetails(age = 20, name = "Kotlin")
+}</code></pre>
+  </li>
+  <li>String Templates
+    <pre><code>fun main() {
+  val name = "Kotlin"
+  val version = 1.8
+  println("Welcome to $name version $version")
+}</code></pre>
+  </li>
+  <li>Lists
+    <pre><code>fun main() {
+  val list = listOf("Apple", "Banana", "Cherry")
+  for (item in list) {
+    println(item)
+  }
+}</code></pre>
+  </li>
+  <li>Mutable Lists
+    <pre><code>fun main() {
+  val list = mutableListOf("Apple", "Banana")
+  list.add("Cherry")
+  println(list)
+}</code></pre>
+  </li>
+  <li>Maps
+    <pre><code>fun main() {
+  val map = mapOf("Kotlin" to 1.8, "Java" to 17)
+  println(map["Kotlin"])
+}</code></pre>
+  </li>
+  <li>Mutable Maps
+    <pre><code>fun main() {
+  val map = mutableMapOf("Kotlin" to 1.8)
+  map["Java"] = 17
+  println(map)
+}</code></pre>
+  </li>
+  <li>Simple Class
+    <pre><code>class Person(val name: String, val age: Int)
+
+fun main() {
+  val person = Person("Kotlin", 7)
+  println("${person.name} is ${person.age} years old")
+}</code></pre>
+  </li>
+  <li>Object Initialization
+    <pre><code>class Person(val name: String, val age: Int)
+
+fun main() {
+  val person = Person(name = "Kotlin", age = 7)
+  println("Name: ${person.name}, Age: ${person.age}")
+}</code></pre>
+  </li>
+</ul>
+
+    <!-- Intermediate -->
+   <h3>Intermediate</h3>
+<ul>
+  <li>Coroutines
+    <pre><code>import kotlinx.coroutines.*
+
+fun main() = runBlocking {
+  launch {
+    delay(1000L)
+    println("Coroutine!")
+  }
+  println("Hello")
+}</code></pre>
+  </li>
+  <li>Higher-Order Functions
+    <pre><code>fun <T> List<T>.customFilter(predicate: (T) -> Boolean): List<T> {
+  val result = mutableListOf<T>()
+  for (item in this) {
+    if (predicate(item)) {
+      result.add(item)
+    }
+  }
+  return result
+}
+
+fun main() {
+  val numbers = listOf(1, 2, 3, 4, 5)
+  val evenNumbers = numbers.customFilter { it % 2 == 0 }
+  println(evenNumbers)
+}</code></pre>
+  </li>
+  <li>Lambda Expressions
+    <pre><code>val sum = { a: Int, b: Int -> a + b }
+fun main() {
+  println(sum(5, 3))
+}</code></pre>
+  </li>
+  <li>Null Safety with `!!`
+    <pre><code>fun main() {
+  val name: String? = "Kotlin"
+  println(name!!.length)
+}</code></pre>
+  </li>
+  <li>Extension Functions
+    <pre><code>fun String.lastChar(): Char {
+  return this[this.length - 1]
+}
+
+fun main() {
+  println("Kotlin".lastChar())
+}</code></pre>
+  </li>
+  <li>Data Classes
+    <pre><code>data class Person(val name: String, val age: Int)
+
+fun main() {
+  val person = Person("Kotlin", 7)
+  println(person)
+}</code></pre>
+  </li>
+  <li>Destructuring Declarations
+    <pre><code>data class Person(val name: String, val age: Int)
+
+fun main() {
+  val person = Person("Kotlin", 7)
+  val (name, age) = person
+  println("$name is $age years old")
+}</code></pre>
+  </li>
+  <li>Companion Objects
+    <pre><code>class MyClass {
+  companion object {
+    fun greet() {
+      println("Hello from companion object!")
+    }
+  }
+}
+
+fun main() {
+  MyClass.greet()
+}</code></pre>
+  </li>
+  <li>Sealed Classes
+    <pre><code>sealed class Result
+data class Success(val data: String) : Result()
+data class Error(val exception: Exception) : Result()
+
+fun main() {
+  val result: Result = Success("Data loaded")
+  when (result) {
+    is Success -> println(result.data)
+    is Error -> println(result.exception.message)
+  }
+}</code></pre>
+  </li>
+  <li>Generics
+    <pre><code>fun <T> printList(list: List<T>) {
+  for (item in list) {
+    println(item)
+  }
+}
+
+fun main() {
+  printList(listOf(1, 2, 3))
+  printList(listOf("Kotlin", "Java"))
+}</code></pre>
+  </li>
+</ul>
+
+    <!-- Advanced -->
+    <h3>Advanced</h3>
+<ul>
+  <li>Type Aliases
+    <pre><code>typealias Name = String
+fun main() {
+  val name: Name = "Kotlin"
+  println(name)
+}</code></pre>
+  </li>
+  <li>Inline Functions
+    <pre><code>inline fun runOnce(action: () -> Unit) {
+  action()
+}
+
+fun main() {
+  runOnce { println("This is executed only once") }
+}</code></pre>
+  </li>
+  <li>Reified Type Parameters
+    <pre><code>inline fun <reified T> isType(obj: Any): Boolean {
+  return obj is T
+}
+
+fun main() {
+  println(isType<String>("Kotlin"))
+  println(isType<Int>("Kotlin"))
+}</code></pre>
+  </li>
+  <li>Delegation
+    <pre><code>interface Printer {
+  fun print()
+}
+
+class ConsolePrinter : Printer {
+  override fun print() {
+    println("Printing to Console")
+  }
+}
+
+class DelegatingPrinter(printer: Printer) : Printer by printer
+
+fun main() {
+  val printer = ConsolePrinter()
+  val delegatingPrinter = DelegatingPrinter(printer)
+  delegatingPrinter.print()
+}</code></pre>
+  </li>
+  <li>Function Literals with Receiver
+    <pre><code>fun buildString(builderAction: StringBuilder.() -> Unit): String {
+  val sb = StringBuilder()
+  sb.builderAction()
+  return sb.toString()
+}
+
+fun main() {
+  val result = buildString {
+    append("Hello, ")
+    append("Kotlin!")
+  }
+  println(result)
+}</code></pre>
+  </li>
+  <li>Custom Getters and Setters
+    <pre><code>class Rectangle(var width: Int, var height: Int) {
+  val area: Int
+    get() = width * height
+
+  var perimeter: Int = 0
+    set(value) {
+      println("Setting perimeter to $value")
+      field = value
+    }
+}
+
+fun main() {
+  val rect = Rectangle(5, 10)
+  println("Area: ${rect.area}")
+  rect.perimeter = 30
+}</code></pre>
+  </li>
+  <li>Lazy Initialization
+    <pre><code>val lazyValue: String by lazy {
+  println("Computed!")
+  "Hello, Kotlin!"
+}
+
+fun main() {
+  println(lazyValue)
+  println(lazyValue)
+}</code></pre>
+  </li>
+  <li>Operator Overloading
+    <pre><code>data class Point(val x: Int, val y: Int) {
+  operator fun plus(other: Point): Point {
+    return Point(x + other.x, y + other.y)
+  }
+}
+
+fun main() {
+  val p1 = Point(1, 2)
+  val p2 = Point(3, 4)
+  val result = p1 + p2
+  println(result)
+}</code></pre>
+  </li>
+  <li>Enum Classes
+    <pre><code>enum class Direction {
+  NORTH, EAST, SOUTH, WEST
+}
+
+fun main() {
+  val dir = Direction.NORTH
+  println("Direction is $dir")
+}</code></pre>
+  </li>
+  <li>Destructuring in Loops
+    <pre><code>data class Person(val name: String, val age: Int)
+
+fun main() {
+  val people = listOf(Person("Alice", 30), Person("Bob", 25))
+  for ((name, age) in people) {
+    println("$name is $age years old")
+  }
+}</code></pre>
+  </li>
+</ul>
+
+    <!-- Expert -->
+    <h3>Expert</h3>
+<ul>
+  <li>Type-Safe Builders
+    <pre><code>class Html {
+  private val children = mutableListOf<Html>()
+
+  fun body(init: Html.() -> Unit) {
+    val body = Html()
+    body.init()
+    children.add(body)
+  }
+
+  fun render(): String {
+    return children.joinToString(separator = "\n") { it.render() }
+  }
+
+  override fun toString(): String {
+    return "<html>\n${render()}\n</html>"
+  }
+}
+
+fun html(init: Html.() -> Unit): Html {
+  val html = Html()
+  html.init()
+  return html
+}
+
+fun main() {
+  val document = html {
+    body {
+      // Add content to body here
+    }
+  }
+  println(document)
+}</code></pre>
+  </li>
+  <li>Annotations
+    <pre><code>@Target(AnnotationTarget.CLASS)
+@Retention(AnnotationRetention.RUNTIME)
+annotation class MyAnnotation(val description: String)
+
+@MyAnnotation("This is a sample class")
+class SampleClass
+
+fun main() {
+  val annotations = SampleClass::class.annotations
+  annotations.forEach { println(it) }
+}</code></pre>
+  </li>
+  <li>Reflection
+    <pre><code>import kotlin.reflect.full.memberFunctions
+
+class Example {
+  fun hello() = println("Hello, World!")
+}
+
+fun main() {
+  val example = Example()
+  val kClass = example::class
+  val function = kClass.memberFunctions.find { it.name == "hello" }
+  function?.call(example)
+}</code></pre>
+  </li>
+  <li>Scoped Functions
+    <pre><code>fun <T> T?.letIfNotNull(action: (T) -> Unit): T? {
+  this?.let(action)
+  return this
+}
+
+fun main() {
+  val name: String? = "Kotlin"
+  name.letIfNotNull { println("Name is: $it") }
+}</code></pre>
+  </li>
+  <li>Custom Annotations with Arguments
+    <pre><code>@Target(AnnotationTarget.FUNCTION)
+@Retention(AnnotationRetention.RUNTIME)
+annotation class Log(val level: String)
+
+class Logger {
+  @Log("INFO")
+  fun logInfo() {
+    println("Logging info")
+  }
+}
+
+fun main() {
+  val function = Logger::class.members.find { it.name == "logInfo" }
+  val annotation = function?.annotations?.filterIsInstance<Log>()?.first()
+  println(annotation?.level)
+}</code></pre>
+  </li>
+  <li>Sealed Interfaces
+    <pre><code>sealed interface Shape
+
+data class Circle(val radius: Double) : Shape
+data class Square(val side: Double) : Shape
+
+fun main() {
+  val shape: Shape = Circle(5.0)
+  when (shape) {
+    is Circle -> println("Circle with radius ${shape.radius}")
+    is Square -> println("Square with side ${shape.side}")
+  }
+}</code></pre>
+  </li>
+  <li>Class Delegation
+    <pre><code>interface Printer {
+  fun print()
+}
+
+class ConsolePrinter : Printer {
+  override fun print() {
+    println("Printing to Console")
+  }
+}
+
+class LoggingPrinter(printer: Printer) : Printer by printer
+
+fun main() {
+  val printer = ConsolePrinter()
+  val loggingPrinter = LoggingPrinter(printer)
+  loggingPrinter.print()
+}</code></pre>
+  </li>
+  <li>Object Expressions
+    <pre><code>interface Greeting {
+  fun greet()
+}
+
+fun main() {
+  val greeting = object : Greeting {
+    override fun greet() {
+      println("Hello from object expression!")
+    }
+  }
+  greeting.greet()
+}</code></pre>
+  </li>
+  <li>Operator Overloading with Complex Types
+    <pre><code>data class Complex(val real: Double, val imaginary: Double) {
+  operator fun plus(other: Complex): Complex {
+    return Complex(real + other.real, imaginary + other.imaginary)
+  }
+
+  override fun toString(): String {
+    return "$real + ${imaginary}i"
+  }
+}
+
+fun main() {
+  val c1 = Complex(3.0, 4.0)
+  val c2 = Complex(1.0, 2.0)
+  val sum = c1 + c2
+  println(sum)
+}</code></pre>
+  </li>
+  <li>Type Parameter Constraints
+    <pre><code>fun <T : Number> add(x: T, y: T): Double {
+  return x.toDouble() + y.toDouble()
+}
+
+fun main() {
+  println(add(1, 2))
+  println(add(1.5, 2.5))
+}</code></pre>
+  </li>
+</ul>
+
+    <!-- Master -->
+    <h3>Master</h3>
+<ul>
+  <li>Type-Level Programming
+    <pre><code>inline fun <reified T> List<Any>.filterByType(): List<T> {
+  return this.filterIsInstance<T>()
+}
+
+fun main() {
+  val list = listOf(1, "Hello", 2.5, "World", 3)
+  val integers = list.filterByType<Int>()
+  println(integers)
+}</code></pre>
+  </li>
+  <li>Generics with Variance
+    <pre><code>open class Animal
+class Dog : Animal()
+class Cat : Animal()
+
+fun <T> printAnimals(animals: List<T>) {
+  animals.forEach { println(it) }
+}
+
+fun main() {
+  val dogs = listOf(Dog(), Dog())
+  val cats = listOf(Cat(), Cat())
+  
+  printAnimals(dogs)  // Works because Dog is a subclass of Animal
+  printAnimals(cats)  // Works because Cat is a subclass of Animal
+}</code></pre>
+  </li>
+  <li>Context-Specific Lambdas
+    <pre><code>fun <T> runWithContext(action: () -> T): T {
+  println("Context: ${Thread.currentThread().name}")
+  return action()
+}
+
+fun main() {
+  val result = runWithContext {
+    "Hello, Context-Specific Lambdas!"
+  }
+  println(result)
+}</code></pre>
+  </li>
+  <li>Operator Overloading with Abstract Types
+    <pre><code>abstract class Shape {
+  abstract fun area(): Double
+  abstract operator fun plus(other: Shape): Shape
+}
+
+data class Rectangle(val width: Double, val height: Double) : Shape() {
+  override fun area() = width * height
+
+  override fun plus(other: Shape): Shape {
+    return if (other is Rectangle) {
+      Rectangle(width + other.width, height + other.height)
+    } else {
+      this
+    }
+  }
+}
+
+fun main() {
+  val r1 = Rectangle(4.0, 5.0)
+  val r2 = Rectangle(2.0, 3.0)
+  val result = r1 + r2
+  println("New Rectangle area: ${result.area()}")
+}</code></pre>
+  </li>
+  <li>Type Classes
+    <pre><code>interface Show<T> {
+  fun show(value: T): String
+}
+
+object IntShow : Show<Int> {
+  override fun show(value: Int) = "Integer: $value"
+}
+
+object StringShow : Show<String> {
+  override fun show(value: String) = "String: $value"
+}
+
+fun <T> printShow(value: T, show: Show<T>) {
+  println(show.show(value))
+}
+
+fun main() {
+  printShow(10, IntShow)
+  printShow("Kotlin", StringShow)
+}</code></pre>
+  </li>
+  <li>Custom Type Constructors
+    <pre><code>sealed class Box<out T> {
+  data class Item<T>(val value: T) : Box<T>()
+  object Empty : Box<Nothing>()
+}
+
+fun <T> Box<T>.getValue(): T? {
+  return if (this is Box.Item) value else null
+}
+
+fun main() {
+  val box = Box.Item("Hello, Kotlin")
+  println(box.getValue())
+}</code></pre>
+  </li>
+  <li>Complex Dependency Injection
+    <pre><code>class DatabaseService
+class LoggingService
+class Application(val db: DatabaseService, val logger: LoggingService)
+
+fun main() {
+  val dbService = DatabaseService()
+  val loggerService = LoggingService()
+  val app = Application(dbService, loggerService)
+  println("Application initialized with Database and Logging services")
+}</code></pre>
+  </li>
+  <li>Advanced Coroutines: Structured Concurrency
+    <pre><code>import kotlinx.coroutines.*
+
+fun main() = runBlocking {
+  launch {
+    delay(1000)
+    println("Task 1 completed")
+  }
+  launch {
+    delay(500)
+    println("Task 2 completed")
+  }
+  println("Tasks launched")
+}</code></pre>
+  </li>
+  <li>Building a DSL (Domain-Specific Language)
+    <pre><code>class HtmlTag(val name: String) {
+  private val children = mutableListOf<HtmlTag>()
+  
+  fun addChild(tag: HtmlTag) {
+    children.add(tag)
+  }
+
+  fun render(): String {
+    return "<$name>${children.joinToString("") { it.render() }}</$name>"
+  }
+}
+
+fun html(init: HtmlTag.() -> Unit): HtmlTag {
+  val root = HtmlTag("html")
+  root.init()
+  return root
+}
+
+fun main() {
+  val document = html {
+    addChild(HtmlTag("head"))
+    addChild(HtmlTag("body"))
+  }
+  println(document.render())
+}</code></pre>
+  </li>
+  <li>Type-Level Algebraic Data Types (ADTs)
+    <pre><code>sealed class Result<out T> {
+  data class Success<out T>(val value: T) : Result<T>()
+  data class Failure(val exception: Exception) : Result<Nothing>()
+}
+
+fun <T> divide(a: Int, b: Int): Result<T> {
+  return if (b == 0) {
+    Result.Failure(ArithmeticException("Cannot divide by zero"))
+  } else {
+    Result.Success(a / b as T)
+  }
+}
+
+fun main() {
+  val result = divide<Int>(4, 2)
+  when (result) {
+    is Result.Success -> println("Result: ${result.value}")
+    is Result.Failure -> println("Error: ${result.exception.message}")
+  }
+}</code></pre>
+  </li>
+</ul>
+  </section>
+
+  <!-- Tools and Compilers -->
+  <section>
+    <h2>Tools and Compilers</h2>
+    <ul>
+      <li>IntelliJ IDEA</li>
+      <li>Android Studio</li>
+      <li>Kotlin Playground</li>
+      <li>Eclipse IDE with Kotlin Plugin</li>
+      <li>VS Code with Kotlin Extension</li>
+      <li>Kotlin Compiler (CLI)</li>
+      <li>Spring Boot with Kotlin</li>
+      <li>Ktor Framework</li>
+      <li>Gradle</li>
+      <li>Maven</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Created by Bryson Harvey aka Orikyx</p>
+    <p>Email: b21227127@gmail.com</p>
+    <p>Facebook: Bryson Harvey</p>
+    <p>Instagram: freeorikyx</p>
+    <p>Discord Server: <a href="https://discord.gg/ZPXh9xUW8A" target="_blank">Join here</a></p>
+  </footer>
+</body>
+</html>

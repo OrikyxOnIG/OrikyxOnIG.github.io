@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Golang</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #000000, #FFD700);
+            color: white;
+        }
+
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .home-button {
+            padding: 10px 20px;
+            background-color: #FFD700;
+            color: black;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .home-button:hover {
+            background-color: #e6c200;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .cheatsheet-section {
+            margin-bottom: 40px;
+        }
+
+        .cheatsheet-section h2 {
+            color: #FFD700;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .cheatsheet-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .cheatsheet-section li {
+            margin: 10px 0;
+        }
+
+        code {
+            display: block;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 1.1em;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        footer {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Learning Golang</h1>
+        <a href="index.html" class="home-button">Home</a>
+    </header>
+
+    <div class="content">
+        <p>Go, also known as Golang, is an open-source programming language developed by Google. It is designed for building fast, efficient, and scalable applications. Go is known for its simplicity and powerful concurrency features, which make it an excellent choice for backend development, cloud services, and distributed systems. Its statically typed nature, simplicity in design, and performance make it ideal for modern software development.</p>
+
+        <!-- Basics Section -->
+        <div class="cheatsheet-section">
+            <h2>Basics</h2>
+            <ul>
+                <li>
+                    <strong>Variables</strong> - Declare and initialize variables.
+                    <code>
+var x int = 10
+                    </code>
+                </li>
+                <li>
+                    <strong>Constants</strong> - Define unchanging values.
+                    <code>
+const Pi = 3.14
+                    </code>
+                </li>
+                <li>
+                    <strong>Functions</strong> - Define reusable blocks of code.
+                    <code>
+func add(a int, b int) int {
+    return a + b
+}
+                    </code>
+                </li>
+                <li>
+                    <strong>Arrays</strong> - Define fixed-size collections of elements.
+                    <code>
+var arr [5]int
+                    </code>
+                </li>
+                <li>
+                    <strong>Slices</strong> - Define dynamically-sized, flexible arrays.
+                    <code>
+var arr []int
+arr = append(arr, 1)
+                    </code>
+                </li>
+                <li>
+                    <strong>Maps</strong> - Define key-value pairs.
+                    <code>
+m := make(map[string]int)
+m["foo"] = 42
+                    </code>
+                </li>
+                <li>
+                    <strong>For Loops</strong> - Iterates over a range of values.
+                    <code>
+for i := 0; i < 5; i++ {
+    fmt.Println(i)
+}
+                    </code>
+                </li>
+                <li>
+                    <strong>If Statements</strong> - Conditional execution.
+                    <code>
+if x > 10 {
+    fmt.Println("x is greater than 10")
+}
+                    </code>
+                </li>
+                <li>
+                    <strong>Switch Statements</strong> - Multiple conditions.
+                    <code>
+switch x {
+case 1:
+    fmt.Println("One")
+case 2:
+    fmt.Println("Two")
+default:
+    fmt.Println("Default")
+}
+                    </code>
+                </li>
+                <li>
+                    <strong>Defer</strong> - Delays the execution of a function until the surrounding function returns.
+                    <code>
+defer fmt.Println("World")
+fmt.Println("Hello")
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Intermediate Section -->
+        <div class="cheatsheet-section">
+            <h2>Intermediate</h2>
+            <ul>
+                <li>
+                    <strong>Goroutines</strong> - Lightweight threads for concurrency.
+                    <code>
+go func() {
+    fmt.Println("Concurrent")
+}()
+                    </code>
+                </li>
+                <li>
+                    <strong>Channels</strong> - Used to communicate between goroutines.
+                    <code>
+ch := make(chan int)
+go func() {
+    ch <- 42
+}()
+fmt.Println(<-ch)
+                    </code>
+                </li>
+                <li>
+                    <strong>Structs</strong> - Defines composite data types.
+                    <code>
+type Person struct {
+    Name string
+    Age  int
+}
+                    </code>
+                </li>
+                <li>
+                    <strong>Methods</strong> - Functions associated with a type.
+                    <code>
+func (p Person) Greet() {
+    fmt.Println("Hello, " + p.Name)
+}
+                    </code>
+                </li>
+                <li>
+                    <strong>Interfaces</strong> - Defines behavior for types.
+                    <code>
+type Greeter interface {
+    Greet()
+}
+                    </code>
+                </li>
+                <li>
+                    <strong>Packages</strong> - Group related functions and types.
+                    <code>
+import "fmt"
+                    </code>
+                </li>
+                <li>
+                    <strong>File I/O</strong> - Read and write files.
+                    <code>
+content, err := ioutil.ReadFile("file.txt")
+if err != nil {
+    log.Fatal(err)
+}
+fmt.Println(string(content))
+                    </code>
+                </li>
+                <li>
+                    <strong>Concurrency Patterns</strong> - Common patterns for managing concurrency.
+                    <code>
+var ch = make(chan int)
+go producer(ch)
+go consumer(ch)
+                    </code>
+                </li>
+                <li>
+                    <strong>JSON</strong> - Parsing and encoding JSON data.
+                    <code>
+jsonData := `{"Name": "Alice", "Age": 25}`
+var person Person
+json.Unmarshal([]byte(jsonData), &person)
+                    </code>
+                </li>
+                <li>
+                    <strong>Error Handling</strong> - Handling errors with custom types.
+                    <code>
+if err != nil {
+    fmt.Println("Error:", err)
+}
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Advanced Section -->
+        <div class="cheatsheet-section">
+            <h2>Advanced</h2>
+            <ul>
+                <li>
+                    <strong>Reflection</strong> - Inspect and manipulate types at runtime.
+                    <code>
+v := reflect.ValueOf(x)
+                    </code>
+                </li>
+                <li>
+                    <strong>Mutex</strong> - Synchronization primitive for mutual exclusion.
+                    <code>
+var mu sync.Mutex
+mu.Lock()
+// critical section
+mu.Unlock()
+                    </code>
+                </li>
+                <li>
+                    <strong>Interfaces in Depth</strong> - Advanced use of interfaces.
+                    <code>
+type Speaker interface {
+    Speak()
+}
+                    </code>
+                </li>
+                <li>
+                    <strong>Concurrency Primitives</strong> - Advanced control of concurrency.
+                    <code>
+var wg sync.WaitGroup
+wg.Add(1)
+go func() {
+    defer wg.Done()
+}()
+wg.Wait()
+                    </code>
+                </li>
+                <li>
+                    <strong>Channel Directions</strong> - Restricting channels to one-way communication.
+                    <code>
+ch := make(chan int)
+func sendData(ch chan<- int) {
+    ch <- 42
+}
+                    </code>
+                </li>
+                <li>
+                    <strong>Context</strong> - Managing timeouts and cancellations in concurrent operations.
+                    <code>
+ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+defer cancel()
+                    </code>
+                    </li>
+                <li>
+                    <strong>Worker Pools</strong> - A pattern to manage concurrent tasks efficiently.
+                    <code>
+var wg sync.WaitGroup
+for i := 0; i < 5; i++ {
+    wg.Add(1)
+    go func(i int) {
+        defer wg.Done()
+        fmt.Println("Task", i)
+    }(i)
+}
+wg.Wait()
+                    </code>
+                </li>
+                <li>
+                    <strong>Context Packages</strong> - Used to pass deadlines, cancellation signals, and other request-scoped values across API boundaries.
+                    <code>
+ctx, cancel := context.WithCancel(context.Background())
+defer cancel()
+                    </code>
+                </li>
+                <li>
+                    <strong>Atomic Operations</strong> - Efficient handling of basic data types in concurrent environments.
+                    <code>
+var count int32
+atomic.AddInt32(&count, 1)
+                    </code>
+                </li>
+                <li>
+                    <strong>Custom Data Structures</strong> - Creating your own data types for specialized use cases.
+                    <code>
+type Stack struct {
+    items []int
+}
+
+func (s *Stack) Push(item int) {
+    s.items = append(s.items, item)
+}
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Expert Section -->
+        <div class="cheatsheet-section">
+            <h2>Expert</h2>
+            <ul>
+                <li>
+                    <strong>Memory Management</strong> - Manually handling memory allocation and deallocation for optimization.
+                    <code>
+go run -gcflags="-m" main.go
+                    </code>
+                </li>
+                <li>
+                    <strong>Low-Level Optimization</strong> - Writing performance-sensitive code with precise control over the memory layout.
+                    <code>
+var x int64
+unsafe.Sizeof(x)
+                    </code>
+                </li>
+                <li>
+                    <strong>Advanced Goroutine Management</strong> - Managing large numbers of goroutines effectively.
+                    <code>
+go func() { fmt.Println("Goroutine!") }()
+                    </code>
+                </li>
+                <li>
+                    <strong>Runtime Reflection</strong> - Inspecting and altering the structure of types dynamically.
+                    <code>
+r := reflect.TypeOf(myObject)
+                    </code>
+                </li>
+                <li>
+                    <strong>Unsafe Package</strong> - Performing low-level, unsafe operations on memory and pointers.
+                    <code>
+var p unsafe.Pointer
+                    </code>
+                </li>
+                <li>
+                    <strong>Linking Go Code with C</strong> - Interfacing Go code with C libraries for performance-critical operations.
+                    <code>
+#cgo CFLAGS: -I/usr/local/include
+#cgo LDFLAGS: -L/usr/local/lib -lMyLib
+                    </code>
+                </li>
+                <li>
+                    <strong>Optimizing Garbage Collection</strong> - Techniques for minimizing the impact of garbage collection.
+                    <code>
+GOGC=off go run my_program.go
+                    </code>
+                </li>
+                <li>
+                    <strong>Advanced Network Programming</strong> - Writing high-performance networking applications.
+                    <code>
+ln, err := net.Listen("tcp", ":8080")
+                    </code>
+                </li>
+                <li>
+                    <strong>Advanced Error Handling</strong> - Creating advanced error handling mechanisms in Go.
+                    <code>
+return fmt.Errorf("Error: %w", err)
+                    </code>
+                </li>
+                <li>
+                    <strong>Creating Go Runtimes</strong> - Building a custom runtime for specific use cases.
+                    <code>
+go build -a -installsuffix cgo
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Master Section -->
+        <div class="cheatsheet-section">
+            <h2>Master</h2>
+            <ul>
+                <li>
+                    <strong>Designing a Go Web Framework</strong> - Creating your own web framework for scalable applications.
+                    <code>
+http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "Hello, Go!")
+})
+                    </code>
+                </li>
+                <li>
+                    <strong>Concurrency Beyond Goroutines</strong> - Using advanced concurrency patterns like pipelines and actor models.
+                    <code>
+ch1 := make(chan int)
+ch2 := make(chan int)
+go func() {
+    ch1 <- 10
+}()
+go func() {
+    ch2 <- 20
+}()
+                    </code>
+                </li>
+                <li>
+                    <strong>Go Runtime Internals</strong> - Understanding and modifying the Go runtime for custom use cases.
+                    <code>
+runtime.GOMAXPROCS(2)
+                    </code>
+                </li>
+                <li>
+                    <strong>Building Distributed Systems</strong> - Developing large-scale distributed systems with Go.
+                    <code>
+grpc.Dial("localhost:50051", grpc.WithInsecure())
+                    </code>
+                </li>
+                <li>
+                    <strong>Creating Custom Go Compilers</strong> - Building a custom compiler using Go for specific programming needs.
+                    <code>
+go run main.go
+                    </code>
+                </li>
+                <li>
+                    <strong>Advanced Network Protocols</strong> - Implementing low-level protocols like HTTP/2, QUIC in Go.
+                    <code>
+http2.ConfigureServer(s, &http2.Server{})
+                    </code>
+                </li>
+                <li>
+                    <strong>Optimizing Throughput and Latency</strong> - Mastering high-performance systems programming.
+                    <code>
+time.Now().UnixNano()
+                    </code>
+                </li>
+                <li>
+                    <strong>High-Performance Computing</strong> - Utilizing Go for numerical simulations, parallel computations, etc.
+                    <code>
+go func() {
+    fmt.Println("HPC task")
+}()
+                    </code>
+                </li>
+                <li>
+                    <strong>Deep Integration with Cloud Services</strong> - Building highly integrated applications with Go for cloud platforms.
+                    <code>
+client, err := cloud.NewClient()
+                    </code>
+                </li>
+                <li>
+                    <strong>Go Compiler Internals</strong> - Understanding and extending the internals of Go's compiler for custom needs.
+                    <code>
+go build -compiler=gccgo
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <h2>Compilers and Tools</h2>
+        <ul>
+            <li>Go Compiler (gc)</li>
+            <li>Golang.org Go Playground</li>
+            <li>Visual Studio Code with Go extension</li>
+            <li>Goland IDE by JetBrains</li>
+            <li>LiteIDE</li>
+            <li>Delve Debugger</li>
+            <li>GoReleaser</li>
+            <li>Go Modules</li>
+            <li>Docker for containerized Go applications</li>
+            <li>gofmt for code formatting</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 | Bryson Harvey (Orikyx)</p>
+        <p><a href="https://discord.gg/ZPXh9xUW8A">Visit My Community</a> | <a href="https://www.instagram.com/freeorikyx">Instagram</a></p>
+    </footer>
+</body>
+
+</html>

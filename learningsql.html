@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning SQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #000000, #FFD700);
+            color: white;
+        }
+
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .home-button {
+            padding: 10px 20px;
+            background-color: #FFD700;
+            color: black;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .home-button:hover {
+            background-color: #e6c200;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .cheatsheet-section {
+            margin-bottom: 40px;
+        }
+
+        .cheatsheet-section h2 {
+            color: #FFD700;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .cheatsheet-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .cheatsheet-section li {
+            margin: 10px 0;
+        }
+
+        code {
+            display: block;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 1.1em;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        footer {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .content {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Learning SQL</h1>
+        <a href="index.html" class="home-button">Home</a>
+    </header>
+
+    <div class="content">
+        <p>SQL (Structured Query Language) is the standard language used to communicate with databases. It is used to manage and manipulate relational databases by querying, inserting, updating, and deleting data. SQL is an essential skill for anyone working with databases or involved in data analysis, data science, or backend development.</p>
+
+        <!-- Basics Section -->
+        <div class="cheatsheet-section">
+            <h2>Basics</h2>
+            <ul>
+                <li>
+                    <strong>SELECT Statement</strong> - Retrieves data from a database.
+                    <code>
+SELECT column1, column2 FROM table_name;
+                    </code>
+                </li>
+                <li>
+                    <strong>WHERE Clause</strong> - Filters results based on conditions.
+                    <code>
+SELECT * FROM table_name WHERE condition;
+                    </code>
+                </li>
+                <li>
+                    <strong>INSERT INTO</strong> - Adds new data to a table.
+                    <code>
+INSERT INTO table_name (column1, column2) VALUES (value1, value2);
+                    </code>
+                </li>
+                <li>
+                    <strong>UPDATE Statement</strong> - Modifies existing data in a table.
+                    <code>
+UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;
+                    </code>
+                </li>
+                <li>
+                    <strong>DELETE Statement</strong> - Removes data from a table.
+                    <code>
+DELETE FROM table_name WHERE condition;
+                    </code>
+                </li>
+                <li>
+                    <strong>ORDER BY</strong> - Sorts query results.
+                    <code>
+SELECT * FROM table_name ORDER BY column_name [ASC|DESC];
+                    </code>
+                </li>
+                <li>
+                    <strong>LIMIT</strong> - Restricts the number of rows returned.
+                    <code>
+SELECT * FROM table_name LIMIT 10;
+                    </code>
+                </li>
+                <li>
+                    <strong>AND/OR</strong> - Combines multiple conditions.
+                    <code>
+SELECT * FROM table_name WHERE condition1 AND condition2;
+                    </code>
+                </li>
+                <li>
+                    <strong>LIKE</strong> - Searches for a specified pattern in a column.
+                    <code>
+SELECT * FROM table_name WHERE column_name LIKE 'pattern';
+                    </code>
+                </li>
+                <li>
+                    <strong>BETWEEN</strong> - Filters data within a range.
+                    <code>
+SELECT * FROM table_name WHERE column_name BETWEEN value1 AND value2;
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Intermediate Section -->
+        <div class="cheatsheet-section">
+            <h2>Intermediate</h2>
+            <ul>
+                <li>
+                    <strong>JOIN</strong> - Combines rows from two or more tables based on a related column.
+                    <code>
+SELECT columns FROM table1 JOIN table2 ON table1.column = table2.column;
+                    </code>
+                </li>
+                <li>
+                    <strong>INNER JOIN</strong> - Returns records that have matching values in both tables.
+                    <code>
+SELECT columns FROM table1 INNER JOIN table2 ON table1.column = table2.column;
+                    </code>
+                </li>
+                <li>
+                    <strong>LEFT JOIN</strong> - Returns all records from the left table and matching records from the right table.
+                    <code>
+SELECT columns FROM table1 LEFT JOIN table2 ON table1.column = table2.column;
+                    </code>
+                </li>
+                <li>
+                    <strong>GROUP BY</strong> - Groups rows that have the same values into summary rows.
+                    <code>
+SELECT COUNT(*), column FROM table_name GROUP BY column;
+                    </code>
+                </li>
+                <li>
+                    <strong>HAVING</strong> - Filters groups of rows after a GROUP BY.
+                    <code>
+SELECT COUNT(*), column FROM table_name GROUP BY column HAVING COUNT(*) > 1;
+                    </code>
+                </li>
+                <li>
+                    <strong>DISTINCT</strong> - Returns only unique values.
+                    <code>
+SELECT DISTINCT column FROM table_name;
+                    </code>
+                </li>
+                <li>
+                    <strong>ALIAS</strong> - Renames a column or table for easier reference.
+                    <code>
+SELECT column AS alias_name FROM table_name;
+                    </code>
+                </li>
+                <li>
+                    <strong>IN</strong> - Allows you to specify multiple values in a WHERE clause.
+                    <code>
+SELECT * FROM table_name WHERE column IN (value1, value2, value3);
+                    </code>
+                </li>
+                <li>
+                    <strong>COUNT, SUM, AVG, MAX, MIN</strong> - Aggregate functions.
+                    <code>
+SELECT COUNT(*), AVG(column) FROM table_name;
+                    </code>
+                </li>
+                <li>
+                    <strong>CASE WHEN</strong> - Provides conditional logic in queries.
+                    <code>
+SELECT column, CASE WHEN condition THEN result END FROM table_name;
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Advanced Section -->
+        <div class="cheatsheet-section">
+            <h2>Advanced</h2>
+            <ul>
+                <li>
+                    <strong>Subqueries</strong> - A query inside another query.
+                    <code>
+SELECT column FROM table_name WHERE column IN (SELECT column FROM table_name WHERE condition);
+                    </code>
+                </li>
+                <li>
+                    <strong>UNION</strong> - Combines the result of two or more SELECT statements.
+                    <code>
+SELECT column FROM table1 UNION SELECT column FROM table2;
+                    </code>
+                </li>
+                <li>
+                    <strong>INDEXES</strong> - Improves the speed of data retrieval operations.
+                    <code>
+CREATE INDEX index_name ON table_name (column);
+                    </code>
+                </li>
+                <li>
+                    <strong>TRANSACTIONS</strong> - Manages a set of SQL queries as a single unit.
+                    <code>
+BEGIN TRANSACTION; -- Starts a transaction
+COMMIT; -- Saves the changes
+ROLLBACK; -- Reverts the changes
+                    </code>
+                </li>
+                <li>
+                    <strong>Stored Procedures</strong> - Precompiled SQL code that can be executed.
+                    <code>
+CREATE PROCEDURE procedure_name AS SELECT * FROM table_name;
+                    </code>
+                </li>
+                <li>
+                    <strong>Triggers</strong> - Automatically executes a query when certain events occur.
+                    <code>
+CREATE TRIGGER trigger_name BEFORE INSERT ON table_name FOR EACH ROW BEGIN ... END;
+                    </code>
+                </li>
+                <li>
+                    <strong>Views</strong> - Virtual tables based on the result of a query.
+                    <code>
+CREATE VIEW view_name AS SELECT column FROM table_name WHERE condition;
+                    </code>
+                </li>
+                <li>
+                    <strong>Locking</strong> - Prevents multiple transactions from interfering with each other.
+                    <code>
+SELECT column FROM table_name FOR UPDATE;
+                    </code>
+                </li>
+                <li>
+                    <strong>Normalization</strong> - Organizing data to reduce redundancy and improve integrity.
+                    <code>
+-- Breaking a single table into smaller tables with relationships
+                    </code>
+                </li>
+                <li>
+                    <strong>Foreign Keys</strong> - Ensures referential integrity between tables.
+                    <code>
+CREATE TABLE table_name (column INT, FOREIGN KEY (column) REFERENCES other_table(column));
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Expert Section -->
+        <div class="cheatsheet-section">
+            <h2>Expert</h2>
+            <ul>
+                <li>
+                    <strong>Partitioning</strong> - Divides a table into smaller, more manageable pieces.
+                    <code>
+CREATE TABLE table_name PARTITION BY RANGE (column);
+                    </code>
+                </li>
+                <li>
+                    <strong>Sharding</strong> - Distributes data across multiple databases.
+                    <code>
+-- Custom sharding logic based on application
+                    </code>
+                </li>
+                <li>
+                    <strong>Database Replication</strong> - Copies data across multiple servers.
+                    <code>
+-- Configuring master-slave replication in MySQL
+                    </code>
+                </li>
+                <li>
+                    <strong>Materialized Views</strong> - Precomputed views that store data.
+                    <code>
+CREATE MATERIALIZED VIEW view_name AS SELECT column FROM table_name;
+                    </code>
+                </li>
+                <li>
+                    <strong>Query Optimization</strong> - Enhances the performance of SQL queries.
+                    <code>
+EXPLAIN SELECT * FROM table_name WHERE condition;
+                    </code>
+                </li>
+                <li>
+                    <strong>Full-text Search</strong> - Search for text data in columns.
+                    <code>
+SELECT * FROM table_name WHERE MATCH(column) AGAINST ('search_term');
+                    </code>
+                </li>
+                <li>
+                    <strong>Database Clustering</strong> - Grouping multiple servers to increase database availability.
+                    <code>
+-- Configuring database cluster
+                    </code>
+                </li>
+                <li>
+                    <strong>Stored Functions</strong> - Similar to stored procedures but returns a value.
+                    <code>
+CREATE FUNCTION function_name() RETURNS INT AS BEGIN RETURN 1; END;
+                    </code>
+                </li>
+                <li>
+                    <strong>Query Caching</strong> - Storing query results to speed up repeated queries.
+                    <code>
+-- Enable caching in the database server configuration
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Master Section -->
+        <div class="cheatsheet-section">
+            <h2>Master</h2>
+            <ul>
+                <li>
+                    <strong>Data Warehousing</strong> - Storing and analyzing large volumes of historical data.
+                    <code>
+-- Data warehousing concepts such as ETL (Extract, Transform, Load)
+                    </code>
+                </li>
+                <li>
+                    <strong>Database Tuning</strong> - Optimizing databases for performance.
+                    <code>
+-- Configuring server settings and index optimization
+                    </code>
+                </li>
+                <li>
+                    <strong>Big Data Integration</strong> - Managing and analyzing large datasets with SQL.
+                    <code>
+-- Using SQL to query big data tools like Hadoop and Spark
+                    </code>
+                </li>
+                <li>
+                    <strong>Multi-Tenant Databases</strong> - Supporting multiple customers or users in a single database.
+                    <code>
+-- Using partitioning or schemas to separate data
+                    </code>
+                </li>
+                <li>
+                    <strong>Advanced Security</strong> - Implementing encryption, user authentication, and access controls.
+                    <code>
+-- Using SSL, role-based access, and encryption for data security
+                    </code>
+                </li>
+                <li>
+                    <strong>Backup and Recovery</strong> - Ensuring data durability and availability.
+                    <code>
+-- Configuring automatic backups and point-in-time recovery
+                    </code>
+                </li>
+                <li>
+                    <strong>Event-Driven Architecture</strong> - Building reactive systems using SQL.
+                    <code>
+-- SQL integration with event processing systems
+                    </code>
+                </li>
+                <li>
+                    <strong>Cloud Databases</strong> - Implementing SQL in cloud environments (AWS, Azure, Google Cloud).
+                    <code>
+-- Configuring and scaling cloud SQL instances
+                    </code>
+                </li>
+            </ul>
+        </div>
+
+        <div class="cheatsheet-section">
+            <h2>Compilers and Tools for SQL</h2>
+            <ul>
+                <li><strong>MySQL</strong> - Open-source relational database management system (RDBMS).</li>
+                <li><strong>PostgreSQL</strong> - Advanced open-source RDBMS known for its scalability.</li>
+                <li><strong>SQL Server</strong> - Microsoft's RDBMS offering with strong support for business intelligence.</li>
+                <li><strong>Oracle Database</strong> - A widely used RDBMS for enterprise-level applications.</li>
+                <li><strong>SQLite</strong> - Lightweight, serverless SQL database engine.</li>
+                <li><strong>MariaDB</strong> - A community-driven fork of MySQL.</li>
+                <li><strong>DB2</strong> - IBM's relational database system.</li>
+                <li><strong>Amazon RDS</strong> - Managed relational database service in AWS.</li>
+                <li><strong>Google Cloud SQL</strong> - Fully managed SQL databases in Google Cloud.</li>
+                <li><strong>DBVisualizer</strong> - SQL database management and query tool.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Bryson Harvey | <a href="https://www.instagram.com/freeorikyx" target="_blank">@freeorikyx</a> | <a href="https://www.facebook.com/BrysonHarvey" target="_blank">Bryson Harvey</a> | <a href="mailto:b21227127@gmail.com">b21227127@gmail.com</a></p>
+    </footer>
+
+</body>
+
+</html>
